@@ -1,0 +1,237 @@
+// Title h1 > h6
+@each $tag, $size in $_titles {
+
+  #{$tag}, .title-#{$tag}{
+    font-size: $size;
+  }
+}
+
+/// Bloc margin align (left, center, ...)
+.b {
+  &-right {
+    margin-left: auto;
+  }
+  &-left {
+    margin-right: auto;
+  }
+  &-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &-top {
+    margin-bottom: auto;
+  }
+  &-bottom {
+    margin-top: auto;
+  }
+}
+
+/// Text transform
+// Text ellipis
+// Font style
+// Text decoration
+// Text color
+.t {
+  &-left {
+    text-align:left;
+  }
+  &-right {
+    text-align: right;
+  }
+  &-justify {
+    text-align: justify;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-capitalize {
+    text-transform: capitalize;
+  }
+  &-lowercase {
+    text-transform: lowercase;
+  }
+  &-important {
+    font-weight: 900;
+  }
+  &-medium {
+    font-weight: 600;
+  }
+  &-light {
+    font-weight: 300;
+  }
+  &-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  &-italic {
+    font-style: italic;
+  }
+  &-oblique {
+    font-style: oblique;
+  }
+  &-underline {
+    text-decoration: underline;
+  }
+  &-stroke {
+    text-decoration: line-through;
+  }
+
+  /// Generation des couleurs de text
+  @each $class, $color in $_colors {
+    &-#{$class}{
+      color: $color;
+    }
+  }
+}
+
+// Display property
+.d {
+  &-block {
+    display: block;
+  }
+  &-inline {
+    display: inline-block;
+  }
+  &-grid {
+    @include p(display, grid);
+  }
+  &-inline-grid {
+    @include p(display, inline-grid);
+  }
+  &-flex {
+    @include p(display, flex);
+  }
+  &-inline-flex {
+    @include p(display, inline-flex);
+  }
+}
+
+// Position property
+.p {
+  &-relative {
+    position: relative;
+  }
+  &-absolute {
+    position: absolute;
+  }
+  &-fixed {
+    position: fixed;
+  }
+  &-sticky{
+    position: sticky;
+  }
+}
+
+// Background-color property
+.bg {
+  @each $class, $color in $_colors {
+    &-#{$class}{
+      background-color: $color;
+    }
+  }
+}
+
+// Fill property
+.fill {
+  @each $class, $color in $_colors {
+    &-#{$class}{
+      fill: $color;
+    }
+  }
+}
+
+// Width: 100%
+.full {
+  width: 100%;
+}
+
+// Full-size div with position (absolute, fixed, ...)
+.full-size {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+/// Center horizontal and vertical align with div
+.position-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Selection color
+::selection {
+  background: $_color-primary;
+  color: _get-color-by-contract($_color-primary);
+}
+
+// Hidden
+.hidden, [hidden]{
+  @include _p(display, none);
+}
+
+// Remove border-radius property
+.no-radius, .square {
+  @include p(border-radius, 0);
+}
+
+// Border-radius: 50%
+.circle {
+  @include p(border-radius, 50%);
+}
+
+// Align-items property
+// Align-full
+// Flex-direction
+.align{
+  &-start {
+    @include p(align-items, start);
+  }
+  &-end {
+    @include p(align-items, end);
+  }
+  &-center {
+    @include p(align-items, center);
+  }
+  &-stretch {
+    @include p(align-items, stretch);
+  }
+  &-full {
+    @include p(align-items, center);
+    @include p(justify-content, center);
+  }
+  &-vertical {
+    @include p(flex-direction, columns);
+    &-reverse {
+      @include p(flex-direction, columns-reverse);
+    }
+  }
+  &-horizontal {
+    @include p(flex-direction, row);
+    &-reverse {
+      @include p(flex-direction, row-reverse)
+    }
+  }
+}
+
+// Justify-content property
+.justify {
+  &-start {
+    @include p(justify-content, start);
+  }
+  &-end {
+    @include p(justify-content, end);
+  }
+  &-center {
+    @include p(justify-content, center);
+  }
+  &-stretch {
+    @include p(justify-content, stretch);
+  }
+}

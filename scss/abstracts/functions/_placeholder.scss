@@ -1,0 +1,31 @@
+
+// Add property in placeholder list
+@function add-placeholder($property, $value, $selector) {
+
+  // La propriete existe deja
+  @if map-has-key($_placeholders, $property) {
+
+    $valueAndSelectors : map-get($_placeholders, $property);
+
+    // Property $property : $value; exist
+    @if map-has-key($valueAndSelectors, $value) {
+
+      $selectors : map-get($valueAndSelectors, $value);
+
+      $selectors : ($selectors + ', '+ $selector);
+      $valueAndSelectors : map-merge($valueAndSelectors, ($value: $selectors));
+    } @else {
+      $valueAndSelectors : map-merge($valueAndSelectors, ($value : $selector));
+    }
+
+    // Update placeholder list
+    $_placeholders : map-merge($_placeholders, ($property : $valueAndSelectors)) !global;
+
+  } @else {
+
+    // Property $property not exist
+    $_placeholders : map-merge($_placeholders, ($property : ($value: $selector))) !global;
+  }
+
+  @return true;
+}

@@ -1,0 +1,39 @@
+{
+  "name": "designers",
+  "version": "0.3.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://www.designers-framework.io",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimitriBouteille/designers-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dimitriBouteille/designers-framework/issues"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "front-end",
+    "framework",
+    "web",
+    "mimimal"
+  ],
+  "author": "Dimitri BOUTEILLE",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-header": "^2.0.7",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}

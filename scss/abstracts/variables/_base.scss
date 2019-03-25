@@ -1,0 +1,80 @@
+
+//
+// COLORS
+//
+
+$_color-primary :         #EC407A !default;
+$_color-secondary :       #E91E63 !default;
+$_color-black :           #323232 !default;
+$_color-white :           #FFFFFF !default;
+$_color-success :         #43A047 !default;
+$_color-info :            #00B0FF !default;
+$_color-warning :         #FF5722 !default;
+$_color-error :           #C0392B !default;
+$_color-light :           rgb(235,235,235)  !default;
+$_color-online :          #00C853 !default;
+$_color-way :             #f1c40f !default;
+$_color-offline :         #e74c3c !default;
+
+// Color mapping
+// Key :    class name
+// Value :  color
+$_colors : (
+        primary :   $_color-primary,
+        secondary : $_color-secondary,
+        black :     $_color-black,
+        white :     $_color-white,
+        success :   $_color-success,
+        info :      $_color-info,
+        warning :   $_color-warning,
+        error :     $_color-error,
+        grey :      $_color-light,
+) !default;
+
+
+//
+// FONTS
+//
+
+$_ft-primary :              'Roboto', sans-serif !default;
+$_ft-secondary :            'Merriweather',serif !default;
+$_ft-icon-material :        'Material Icons' !default;
+$_ft-base-size :            1em !default;
+
+// (p, a, input, span, label, ...)
+$_ft-text-family :          $_ft-primary !default;
+$_ft-text-color :           $_color-black !default;
+$_ft-text-size :            $_ft-base-size !default;
+$_ft-text-weight :          400 !default;
+$_ft-text-line-height :     1.3 !default;
+
+// (h1, h2, h3, ...)
+$_ft-title-family :         $_ft-secondary !default;
+$_ft-title-color :          $_color-black !default;
+$_ft-title-weight :         600 !default;
+
+$_ft-h1-size :              $_ft-base-size * 2.4 !default;
+$_ft-h2-size :              $_ft-base-size * 2.1 !default;
+$_ft-h3-size :              $_ft-base-size * 1.8 !default;
+$_ft-h4-size :              $_ft-base-size * 1.6 !default;
+$_ft-h5-size :              $_ft-base-size * 1.3 !default;
+$_ft-h6-size :              $_ft-base-size !default;
+
+// Title mapping
+// Key :    class name
+// Value :  font-size
+$_titles : (
+        h1 : $_ft-h1-size,
+        h2 : $_ft-h2-size,
+        h3 : $_ft-h3-size,
+        h4 : $_ft-h4-size,
+        h5 : $_ft-h5-size,
+        h6 : $_ft-h6-size,
+) !default;
+
+
+//
+/// CONTAINER
+//
+
+$_body-background-color:          $_color-white !default;

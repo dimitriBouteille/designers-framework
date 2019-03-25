@@ -1,0 +1,156 @@
+body {
+  background-color: $_body-background-color;
+  font-size:        $_ft-text-size;
+  font-weight:      $_ft-text-weight;
+  font-family:      $_ft-text-family;
+  color:            $_ft-text-color;
+  line-height:      $_ft-text-line-height;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+button,
+input,
+textarea,
+fieldset,
+select{
+  outline: none;
+  border:none;
+  background:none;
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+article,
+aside,
+dialog,
+div,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+input,
+textarea,
+select,
+p{
+  display: block;
+}
+
+html,
+body,
+textarea,
+figure,
+label,
+button,
+input,
+textarea,
+select,
+p,
+ul,
+ol,
+li p,
+li ul,
+li ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+code,
+fieldset,
+a{
+  margin: 0;
+  padding: 0;
+}
+
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video {
+  max-width: 100%;
+  max-height:100%;
+}
+
+img {
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+}
+
+a img {
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+a,
+i,
+span,
+p,
+li,
+b,
+strong,
+label,
+input,
+textarea,
+button,
+label,
+select,
+option {
+  font-size:    inherit;
+  font-weight:  inherit;
+  font-family:  inherit;
+  color:        inherit;
+  line-height:  inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[class*="title-"]{
+  @if $_ft-title-color != $_ft-text-color {
+    color: $_ft-title-color;
+  }
+  @if $_ft-title-family != $_ft-text-family {
+    font-family:  $_ft-title-family;
+  }
+
+  @if $_ft-title-weight != $_ft-text-weight {
+    font-weight:  $_ft-title-weight;
+  }
+}

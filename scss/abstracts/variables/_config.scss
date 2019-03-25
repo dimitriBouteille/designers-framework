@@ -1,0 +1,30 @@
+
+//
+// CONFIGURATIONS
+// Do not change variables in this section :)
+//
+
+// @prop {map} $_placeholders [()] List of placeholders
+// (
+//    display : (
+//        flex : 'selector_1, selector_2, selector_3, ...',
+//        grid : 'selector_4, selector_8, ...'
+//      ),
+//    transition : (
+//        all 0.3  ease : 'selector_1, selector_9, ...'
+//      ),
+//    ...
+// )
+$_placeholders :    () !default;
+
+// @prop {boolean} If is false, load placeholder inside selector call mixin p()
+$_debug :           false !default;
+
+
+//
+// CONSTRAST COLOR
+//
+
+$_contrast-low :     $_color-black !default;
+
+$_contrast-high :    $_color-white !default;;

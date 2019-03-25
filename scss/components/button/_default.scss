@@ -1,0 +1,31 @@
+// Default button
+//
+// <button class="button">Button</button>
+.button {
+
+  $this: &;
+
+  @at-root {
+
+    #{$this} {
+
+      @include base-button;
+
+      &:hover, &:focus {
+        @include background-button;
+      }
+
+      @include to-fade-in-button;
+
+      &.to-transparent {
+        &:hover, &:focus {
+          background: transparent;
+          color: $_color-primary;
+        }
+      }
+
+    }
+
+  }
+
+}

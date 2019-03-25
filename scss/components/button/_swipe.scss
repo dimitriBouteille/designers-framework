@@ -1,0 +1,126 @@
+// Swipe button
+//
+// <button class="swipe-button">Swipe button</button>
+.swipe-button {
+
+  $this : &;
+
+  @at-root {
+
+    #{$this} {
+
+      @include base-button(true, false, false);
+      overflow: hidden;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top:0;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        transition: inherit;
+        background-color: $_color-primary;
+        z-index: -1;
+      }
+
+      &.reversed {
+        &:after {
+          right: 0;
+          width: 0;
+          left: auto;
+        }
+        &:hover, &:focus {
+          &:after {
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+
+      &.to-left {
+        &:after {
+          right: 0;
+          left: auto;
+        }
+
+        &.reversed {
+          &:after {
+            right: auto;
+            left: 0;
+          }
+          &:hover, &:focus {
+            &:after {
+              right: 0;
+              left: auto;
+            }
+          }
+        }
+      }
+
+      &.to-bottom {
+        &:after {
+          width: 100%;
+          top: 0;
+          height: 0;
+        }
+        &:hover, &:focus {
+          &:after {
+            height: 100%;
+            top: 0;
+          }
+        }
+        &.reversed {
+          &:after {
+            height: 0;
+            bottom: 0;
+            top: auto;
+          }
+          &:hover, &:focus {
+            &:after {
+              height: 100%;
+              top: 0;
+            }
+          }
+        }
+      }
+
+      &.to-top {
+        &:after {
+          top: auto;
+          height: 0;
+          width: 100%;
+        }
+        &:hover, &:focus {
+          &:after {
+            height: 100%;
+          }
+        }
+        &.reversed {
+          &:after {
+            top: 0;
+            height: 0;
+            bottom: auto;
+          }
+          &:hover, &:focus {
+            &:after {
+              top: auto;
+              bottom: 0;
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      &:hover, &:focus {
+        color: $_color-white;
+        &:after {
+          width: 100%;
+        }
+      }
+
+    }
+
+  }
+
+}
