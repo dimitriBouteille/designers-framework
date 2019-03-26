@@ -1,0 +1,104 @@
+// Avatar
+//
+// <p class="avatar">F</p>
+// <div class="avatars">
+//      <p class="avatar">...</p>
+//      <p class="avatar">...</p>
+//      <p class="avatar">...</p>
+//      ...
+//    </div>
+.avatar {
+
+  $this : &;
+  $list: #{$this}s;
+  $status: #{$this}-status;
+
+  @at-root {
+
+    #{$this} {
+      width:  45px;
+      height: 45px;
+      background: $_color-primary;
+      position: relative;
+      @include p(display, inline-flex);
+      @include p(align-items, center);
+      @include p(justify-content, center);
+      border-radius: 50%;
+      color: get-contrast-text($_color-primary);
+
+      img {
+        border-radius: inherit;
+      }
+
+      &.online {
+        border: solid 3px $_color-online;
+      }
+
+      &.way {
+        border: solid 3px $_color-way;
+      }
+
+      &.offline {
+        border: solid 3px $_color-offline;
+      }
+
+      &.medium{
+        width: 38px;
+        height: 38px;
+
+        #{$status} {
+          width: 13px;
+          height: 13px;
+        }
+      }
+
+      &.small{
+        width: 30px;
+        height: 30px;
+        border-width: 2px;
+
+        #{$status} {
+          width: 12px;
+          height: 12px;
+          border-width: 1px;
+        }
+
+      }
+
+    }
+    #{$list} {
+      @include p(display, flex);
+
+      #{$this} ~ #{$this} {
+        margin-left: -20px;
+      }
+      #{$this} {
+        border: solid 3px $_body-background-color;
+      }
+    }
+    #{$status} {
+      position: absolute;
+      z-index: 1;
+      height: 15px;
+      width: 15px;
+      border-radius: inherit;
+      right: 0;
+      bottom: 0;
+      border: solid 2px $_body-background-color;
+
+      &.online {
+        background: $_color-online;
+      }
+
+      &.way {
+        background: $_color-way;
+      }
+
+      &.offline {
+        background: $_color-offline;
+      }
+    }
+
+  }
+
+}

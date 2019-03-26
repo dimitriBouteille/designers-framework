@@ -1,0 +1,79 @@
+// Tag
+//
+// <p class="tag">
+//      <span class="tag-text">Front-end</span>
+//    </p>
+// <div class="tags">
+//      <p class="tag">...</p>
+//    </div>
+.tag{
+
+  $this : &;
+  $text: #{$this}-text;
+  $label: #{$this}-label;
+  $action: #{$this}-action;
+  $list: #{$this}s;
+
+  @at-root {
+
+    #{$this} {
+      background : rgb(235,235,235);
+      height: 32px;
+      @include p(align-items, center);
+      @include p(display, inline-flex);
+      @include p(transition, all 0.3s ease);
+      position: relative;
+
+      &.rounded {
+        border-radius: 32px;
+      }
+
+      &.has-hover {
+        cursor: pointer;
+        &:hover {
+          background : rgb(205,205,205);
+        }
+      }
+    }
+    #{$text} {
+      padding: 0 12px;
+    }
+    #{$label} {
+      height: inherit;
+      width: 32px;
+      border-radius: inherit;
+      background-color: $_color-primary;
+      @include p(display, flex);
+      @include p(align-items, inherit);
+      @include p(justify-content, center);
+      color: get-contrast-text($_color-primary);
+    }
+    #{$action} {
+      @include p(display, flex);
+      @include p(align-items, center);
+      margin-right: 6px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 18px;
+      i {
+        font-size: inherit;
+      }
+
+      &:hover, &:focus {
+        color: $_color-primary;
+      }
+    }
+    #{$list} {
+      @include p(display, flex);
+      @include p(flex-wrap, wrap);
+      margin-top: -8px;
+      #{$this} {
+        margin-right: 8px;
+        margin-top: 8px;
+      }
+    }
+
+  }
+
+}
+

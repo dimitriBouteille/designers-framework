@@ -1,5 +1,5 @@
 /**
- * Designers Framework v1.0.0 (https://www.designers-framework.io)
+ * Designers Framework v0.3.0 (https://www.designers-framework.io)
  * Copyright 2018-2019 Dimitri BOUTEILLE
  * Licensed under MIT
  */
@@ -562,30 +562,169 @@ h6,
   width: 100%;
 }
 
-.button, .fab-button, .icon-button, .swipe-button {
+.tag {
+  background: #ebebeb;
+  height: 32px;
+  position: relative;
+}
+
+.tag.rounded {
+  border-radius: 32px;
+}
+
+.tag.has-hover {
+  cursor: pointer;
+}
+
+.tag.has-hover:hover {
+  background: #cdcdcd;
+}
+
+.tag-text {
+  padding: 0 12px;
+}
+
+.tag-label {
+  height: inherit;
+  width: 32px;
+  border-radius: inherit;
+  background-color: #EC407A;
+  color: #FFFFFF;
+}
+
+.tag-action {
+  margin-right: 6px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.tag-action i {
+  font-size: inherit;
+}
+
+.tag-action:hover, .tag-action:focus {
+  color: #EC407A;
+}
+
+.tags {
+  margin-top: -8px;
+}
+
+.tags .tag {
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  background: #EC407A;
+  position: relative;
+  border-radius: 50%;
+  color: #FFFFFF;
+}
+
+.avatar img {
+  border-radius: inherit;
+}
+
+.avatar.online {
+  border: solid 3px #00C853;
+}
+
+.avatar.way {
+  border: solid 3px #f1c40f;
+}
+
+.avatar.offline {
+  border: solid 3px #e74c3c;
+}
+
+.avatar.medium {
+  width: 38px;
+  height: 38px;
+}
+
+.avatar.medium .avatar-status {
+  width: 13px;
+  height: 13px;
+}
+
+.avatar.small {
+  width: 30px;
+  height: 30px;
+  border-width: 2px;
+}
+
+.avatar.small .avatar-status {
+  width: 12px;
+  height: 12px;
+  border-width: 1px;
+}
+
+.avatars .avatar ~ .avatar {
+  margin-left: -20px;
+}
+
+.avatars .avatar {
+  border: solid 3px #FFFFFF;
+}
+
+.avatar-status {
+  position: absolute;
+  z-index: 1;
+  height: 15px;
+  width: 15px;
+  border-radius: inherit;
+  right: 0;
+  bottom: 0;
+  border: solid 2px #FFFFFF;
+}
+
+.avatar-status.online {
+  background: #00C853;
+}
+
+.avatar-status.way {
+  background: #f1c40f;
+}
+
+.avatar-status.offline {
+  background: #e74c3c;
+}
+
+.button, .fab-button, .icon-button, .swipe-button, .tag {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.button, .icon-button, .swipe-button {
+.button, .icon-button, .swipe-button, .tag, .avatar {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.fab-button {
+.fab-button, .tag-label, .tag-action, .tags, .avatars {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.button, .fab-button, .icon-button, .swipe-button {
+.button, .fab-button, .icon-button, .swipe-button, .tag, .tag-action, .avatar {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-.fab-button {
+.tag-label {
+  -webkit-box-align: inherit;
+  -ms-flex-align: inherit;
+  align-items: inherit;
+}
+
+.fab-button, .tag-label, .avatar {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -593,4 +732,9 @@ h6,
 
 .fab-button {
   border-radius: 50%;
+}
+
+.tags {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
