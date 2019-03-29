@@ -1,0 +1,89 @@
+// Checkbox material
+//
+// <label class="material-checkbox">
+//            <input class="material-checkbox-input" type="checkbox">
+//            <span class="material-checkbox-check"></span>
+//            <span class="material-checkbox-label">Option 1</span>
+//        </label>
+// <label class="material-checkbox">
+//            <input class="material-checkbox-input" type="checkbox">
+//            <span class="material-checkbox-label">Option 1</span>
+//            <span class="material-checkbox-check"></span>
+//        </label>
+.material-checkbox {
+
+  $this: &;
+  $input: #{$this}-input;
+  $check: #{$this}-check;
+  $label: #{$this}-label;
+
+  @at-root {
+
+    #{$this} {
+      @include p(display, flex);
+      @include p(align-items, center);
+      &:hover, &:focus {
+        #{$check} {
+          border-color: $_color-primary;
+        }
+      }
+    }
+
+    #{$input} {
+      display: none;
+
+      &:checked {
+        ~ #{$check} {
+          background: $_color-primary;
+          border-color: $_color-primary;
+          &:before{
+            opacity: 1;
+          }
+        }
+      }
+
+      &:disabled {
+        ~ #{$check}, ~ #{$label} {
+          cursor: default;
+        }
+        ~ #{$check} {
+          border-color: #b0b0b0;
+        }
+        &:checked{
+          ~ #{$check} {
+            background: #b0b0b0;
+          }
+        }
+      }
+
+      + #{$label} {
+        padding-right: 15px;
+      }
+
+    }
+
+    #{$check} {
+      @include p(transition, all 0.3s ease);
+      position: relative;
+      flex: none;
+      width: 18px;
+      height: 18px;
+      border: solid 2px #b6b6b6;
+      border-radius: 3px;
+      &:before{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        opacity: 0;
+        transition: inherit;
+        @include icon-material('\E5CA');
+        color: $_color-white;
+      }
+
+      + #{$label} {
+        padding-left: 15px;
+      }
+    }
+  }
+}

@@ -12,5 +12,10 @@
 @import "components/link/follow";
 @import "components/link/stroke";
 @import "components/link/underline";
+@import "components/rating";
+@import "components/checkbox";
+@import "components/tooltip";
+@import "components/switch/default";
+@import "components/switch/material";
 
 @include load-placeholder();

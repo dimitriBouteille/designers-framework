@@ -1,0 +1,89 @@
+// Default switch
+//
+// <label class="switch">
+//      <input type="checkbox" class="switch-input">
+//      <span class="switch-toggle"></span>
+//    </label>
+// <label class="switch background">
+//      <input type="checkbox" class="switch-input">
+//      <span class="switch-toggle"></span>
+//    </label>
+.switch {
+
+  $this: &;
+  $input: #{$this}-input;
+  $toogle: #{$this}-toggle;
+
+  @at-root {
+
+    #{$this} {
+      width: 46px;
+      height: 22px;
+      display: block;
+
+      &.background {
+        #{$toogle} {
+          border: none;
+          background-color: rgb(210, 210, 210);
+          &:before {
+            background: $_color-white;
+          }
+        }
+        #{$input} {
+          &:checked {
+            ~ #{$toogle} {
+              background: $_color-primary;
+              &:before {
+                background: get-contrast-text($_color-primary);
+              }
+            }
+          }
+        }
+      }
+    }
+    #{$toogle} {
+
+      display: block;
+      height: inherit;
+      width: inherit;
+      position: relative;
+      border-radius: 13px;
+      border: solid 1px rgb(210,210,210);
+      box-sizing: content-box;
+      @include p(transition, all 0.3s ease);
+      &:before {
+        background: rgb(215,215,215);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        content: "";
+        margin: 3px;
+        right: calc(100% - 22px);
+        transition: inherit;
+      }
+    }
+
+    #{$input} {
+      display: none;
+
+      &:checked {
+        ~ #{$toogle} {
+          border-color: $_color-primary;
+          &:before {
+            right: 0;
+            background: $_color-primary;
+          }
+        }
+      }
+
+      &:disabled {
+        ~ #{$toogle} {
+          opacity: 0.6;
+          cursor: default;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+// Rating
+//
+// <div class="rating">
+//            <span class="rating-icon">
+//                <i class="material-icons">star</i>
+//            </span>
+//            <span class="rating-icon">
+//                <i class="material-icons">star</i>
+//            </span>
+//            <span class="rating-icon">
+//                <i class="material-icons">star</i>
+//            </span>
+//            ...
+//        </div>
+// <div class="rating">
+//            <span class="rating-icon">
+//                <i class="material-icons">star</i>
+//            </span>
+//            <span class="rating-icon">
+//                <i class="material-icons">star</i>
+//            </span>
+//            <span class="rating-icon">
+//                <i class="material-icons">star</i>
+//            </span>
+//            ...
+//        </div>
+// <div class="rating to-scale-up">
+//            <span class="rating-icon">
+//                <i class="material-icons">favorite</i>
+//            </span>
+//            <span class="rating-icon">
+//                <i class="material-icons">favorite</i>
+//            </span>
+//            <span class="rating-icon">
+//                <i class="material-icons">favorite</i>
+//            </span>
+//            ...
+//        </div>
+.rating {
+
+  $this : &;
+  $icon : #{$this}-icon;
+
+  @at-root {
+
+    #{$this} {
+      @include p(display, flex);
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+
+      &.to-scale-up {
+        #{$icon} {
+          &:hover {
+            &, ~ #{$icon} {
+              transform: scale(1.3);
+            }
+          }
+        }
+      }
+    }
+    #{$icon} {
+      cursor: pointer;
+      @include p(transition, all 0.3s ease);
+      color: rgb(200,200,200);
+      ~ #{$icon} {
+        padding-right: 6px;
+      }
+
+      &:hover, &.is-active {
+        &, ~ #{$icon} {
+          color: $_color-primary;
+          fill: $_color-primary;
+        }
+      }
+
+    }
+
+  }
+
+}

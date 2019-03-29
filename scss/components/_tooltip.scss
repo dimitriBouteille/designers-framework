@@ -1,0 +1,91 @@
+// Tooltip
+//
+// <button class="has-tooltip">Hover me - top left
+//                <span class="tooltip">Hello world</span></button>
+// <button class="has-tooltip">Hover me - top right
+//                <span class="tooltip right">Hello world</span></button>
+// <button class="has-tooltip">Hover me - bottom left
+//                <span class="tooltip bottom">Hello world</span></button>
+// <button class="has-tooltip">Hover me - bottom right
+//                <span class="tooltip bottom right">Hello world</span></button>
+// <button class="has-tooltip">Hover me - top center
+//                <span class="tooltip center">Hello world</span></button>
+// <button class="has-tooltip">Hover me - bottom center
+//                <span class="tooltip bottom center">Hello world</span></button>
+.tooltip {
+
+  $this: &;
+
+  @at-root {
+
+    #{$this} {
+      position: absolute;
+      background: rgba(8,8,8,0.8);
+      bottom: 100%;
+      white-space: nowrap;
+      color: $_color-white;
+      padding: 6px;
+      opacity: 0;
+      transition: all 0.15s ease;
+      visibility: hidden;
+      transform: scale(0);
+      transform-origin: left bottom;
+      font-size: 14px;
+      left: 0;
+
+      &.center {
+        left: 50%;
+        transform: scale(0) translateX(-50%);
+      }
+
+      &.right {
+        left: auto;
+        right: 0;
+        transform-origin: right bottom;
+      }
+
+      &.bottom {
+        top: 100%;
+        bottom: auto;
+        transform-origin: left top;
+
+        &.right {
+          left: auto;
+          right: 0;
+          transform-origin: right top;
+        }
+
+      }
+
+      &.disabled {
+        user-select: none;
+        pointer-events: none;
+      }
+
+      &.show {
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+        &.center {
+          transform: scale(1) translateX(-50%);
+        }
+      }
+    }
+
+    .has-tooltip {
+      position: relative;
+      &:hover {
+        #{$this} {
+          opacity: 1;
+          transform: none;
+          visibility: visible;
+        }
+
+        #{$this}.center {
+          transform: scale(1) translateX(-50%);
+        }
+      }
+    }
+  }
+
+}
