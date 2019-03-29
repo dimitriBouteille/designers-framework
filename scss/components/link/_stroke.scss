@@ -1,0 +1,41 @@
+// Stroke link
+// Compatible lors du :hover & :focus
+//
+// <a href="#" class="stroke-link">Hello world</a>
+.stroke-link {
+
+  $this: &;
+  $label: #{$this}-label;
+  $transition: 0.3s;
+  $transition-timing: ease;
+
+  position: relative;
+  color: $_color-primary;
+  transition: all 0.3s ease 0.1s;
+  cursor: pointer;
+
+  &:after {
+    position: absolute;
+    background: $_color-primary;
+    left: 0;
+    right: 0;
+    height: 3px;
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+    transition: top $transition $transition-timing $transition, transform $transition $transition-timing $transition, height $transition $transition-timing 0s;
+    z-index: -1,
+  }
+
+  &:hover, &:focus {
+    color: get-contrast-text($_color-primary);
+    transition-delay: 0.2s;
+    &:after {
+      top: 0;
+      height: 100%;
+      transform: none;
+      transition: top $transition $transition-timing, transform $transition $transition-timing, height $transition $transition-timing $transition;
+    }
+  }
+
+}

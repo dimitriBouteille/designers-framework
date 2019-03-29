@@ -695,7 +695,114 @@ h6,
   background: #e74c3c;
 }
 
-.button, .fab-button, .icon-button, .swipe-button, .tag {
+.background-link {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EC407A)) no-repeat 0 100%;
+  background: linear-gradient(#EC407A) no-repeat 0 100%;
+  background-size: 100% 35%;
+  -webkit-transition: background-size 0.3s, color 0.3s;
+  transition: background-size 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.background-link:hover, .background-link:focus {
+  background-size: 100% 100%;
+  color: #FFFFFF;
+}
+
+.follow-link {
+  position: relative;
+  padding-bottom: 6px;
+  cursor: pointer;
+}
+
+.follow-link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 75%;
+  height: 3px;
+  background: #EC407A;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.follow-link:hover, .follow-link:focus {
+  color: #EC407A;
+}
+
+.follow-link:hover:after, .follow-link:focus:after {
+  -webkit-transition: right 0.2s ease, left  0.3s ease-out 0.3s;
+  transition: right 0.2s ease, left  0.3s ease-out 0.3s;
+  right: 0;
+  left: 75%;
+}
+
+.stroke-link {
+  position: relative;
+  color: #EC407A;
+  -webkit-transition: all 0.3s ease 0.1s;
+  transition: all 0.3s ease 0.1s;
+  cursor: pointer;
+}
+
+.stroke-link:after {
+  position: absolute;
+  background: #EC407A;
+  left: 0;
+  right: 0;
+  height: 3px;
+  content: "";
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: top 0.3s ease 0.3s, height 0.3s ease 0s, -webkit-transform 0.3s ease 0.3s;
+  transition: top 0.3s ease 0.3s, height 0.3s ease 0s, -webkit-transform 0.3s ease 0.3s;
+  transition: top 0.3s ease 0.3s, transform 0.3s ease 0.3s, height 0.3s ease 0s;
+  transition: top 0.3s ease 0.3s, transform 0.3s ease 0.3s, height 0.3s ease 0s, -webkit-transform 0.3s ease 0.3s;
+  z-index: -1;
+}
+
+.stroke-link:hover, .stroke-link:focus {
+  color: #FFFFFF;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.stroke-link:hover:after, .stroke-link:focus:after {
+  top: 0;
+  height: 100%;
+  -webkit-transform: none;
+  transform: none;
+  -webkit-transition: top 0.3s ease, height 0.3s ease 0.3s, -webkit-transform 0.3s ease;
+  transition: top 0.3s ease, height 0.3s ease 0.3s, -webkit-transform 0.3s ease;
+  transition: top 0.3s ease, transform 0.3s ease, height 0.3s ease 0.3s;
+  transition: top 0.3s ease, transform 0.3s ease, height 0.3s ease 0.3s, -webkit-transform 0.3s ease;
+}
+
+.underline-link {
+  cursor: pointer;
+  color: #EC407A;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EC407A)) no-repeat 0 100%;
+  background: linear-gradient(#EC407A) no-repeat 0 100%;
+  background-size: 0 2px;
+  -webkit-transition: background-size 0.3s;
+  transition: background-size 0.3s;
+}
+
+.underline-link:hover, .underline-link:focus {
+  background-size: 100% 2px;
+}
+
+.underline-link.reversed {
+  background-position: 100% 100%;
+}
+
+.underline-link.reversed:hover, .underline-link.reversed:focus {
+  background-position: 0 100%;
+}
+
+.button, .fab-button, .icon-button, .swipe-button, .tag, .follow-link {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

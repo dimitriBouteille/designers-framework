@@ -8,5 +8,9 @@
 @import "components/button/swipe";
 @import "components/tag";
 @import "components/avatar";
+@import "components/link/background";
+@import "components/link/follow";
+@import "components/link/stroke";
+@import "components/link/underline";
 
 @include load-placeholder();

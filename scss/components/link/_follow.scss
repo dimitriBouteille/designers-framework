@@ -1,0 +1,31 @@
+// Follow link
+//
+// <a href="#" class="follow-link">Hello world</a>
+.follow-link {
+
+  position: relative;
+  @include  p(transition, all 0.3s ease);
+  padding-bottom: 6px;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 75%;
+    height:     3px;
+    background: $_color-primary;
+    transition: inherit;
+  }
+
+  &:hover, &:focus {
+    color: $_color-primary;
+    &:after {
+      transition: right 0.2s ease, left  0.3s ease-out 0.3s;
+      right: 0;
+      left: 75%;
+    }
+  }
+
+}
