@@ -1,0 +1,62 @@
+// Uploader
+//
+// <div class="uploader">
+//    <input class="uploader-input" type="file">
+//    <p class="uploader-message">
+//        Drop files here or <span class="t-primary">choose a file</span>
+//    </p>
+//  </div>
+.uploader {
+
+  $this: &;
+  $input: #{$this}-input;
+  $message: #{$this}-message;
+
+  @at-root {
+
+    #{$this} {
+      position: relative;
+      @include p(display, flex);
+      @include p(justify-content, center);
+      @include p(align-items, center);
+      @include p(flex-direction, column);
+      padding: 3rem;
+      transition: all 0.3s ease;
+    }
+
+    #{$input} {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      visibility: hidden;
+      cursor: pointer;
+
+      &:before {
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        top: 0;
+        border: dashed 2px rgb(230,230,230);
+        transition: all 0.3s;
+      }
+
+      &:hover, &:focus {
+        &:before {
+          border-color: $_color-primary;
+        }
+      }
+    }
+
+    #{$message} {
+      ~ #{$message} {
+        margin-top: 5px;
+      }
+    }
+
+  }
+}
