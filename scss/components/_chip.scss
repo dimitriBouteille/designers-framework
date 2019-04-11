@@ -1,0 +1,143 @@
+// Chip
+//
+// <label class="chip">
+//    <input type="checkbox" class="chip-field">
+//    <span class="chip-label">
+//        <span class="chip-text">Hugh Jackman</span>
+//    </span>
+//  </label>
+// <label class="chip">
+//    <input type="checkbox" class="chip-field">
+//    <span class="chip-label">
+//        <i class="material-icons chip-check">check</i>
+//        <span class="chip-text">Hugh Jackman</span>
+//    </span>
+//  </label>
+// <div class="chips">
+//    <label class="chip to-light">
+//        <input type="checkbox" class="chip-field">
+//        <span class="chip-label">
+//            <span class="chip-text">Hugh Laurie</span>
+//        </span>
+//    </label>
+//    ...
+//  </div>
+.chip {
+
+  $this: &;
+  $list: #{$this}s;
+  $field: #{$this}-field;
+  $label: #{$this}-label;
+  $check: #{$this}-check;
+  $text: #{$this}-text;
+
+  @at-root {
+
+    // .border
+    // .to-light
+    #{$this} {
+      &.border {
+        #{$label} {
+          border: solid 1px lighten(#000, 75%);
+          background: none;
+          &:hover {
+            border-color: $_color-primary;
+            color: $_color-primary;
+          }
+        }
+        #{$check} {
+          &.rounded {
+            background: $_color-primary;
+            color: get-contrast-text($_color-primary);
+          }
+        }
+        #{$field} {
+          &:checked {
+            ~ #{$label} {
+              background: lighten($_color-primary, 40%);
+              color: $_color-primary;
+              border-color: $_color-primary;
+            }
+          }
+        }
+      }
+      &.to-light {
+        #{$field} {
+          &:checked {
+            ~ #{$label} {
+              background: lighten($_color-primary, 30%);
+              color: $_color-primary;
+            }
+          }
+        }
+      }
+    }
+    #{$list} {
+      @include p(display, flex);
+      @include p(flex-wrap, wrap);
+      #{$this} {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    #{$field} {
+      display: none;
+      &:checked {
+        ~ #{$label} {
+          background: $_color-primary;
+          color: get-contrast-text($_color-primary);
+
+          #{$check} {
+            opacity: 1;
+            ~ #{$text} {
+              margin-left: 0;
+              padding-left: 8px;
+            }
+          }
+        }
+      }
+    }
+    #{$text} {
+      padding: 0 18px;
+    }
+    #{$label} {
+      @include p(display, inline-flex);
+      @include p(align-items, center);
+      @include p(justify-content, center);
+      position: relative;
+      height: 36px;
+      background: lighten(#000, 94%);
+      border-radius: 18px;
+      transition: all 0.2s ease;
+      &:hover {
+        background: lighten(#000, 88%)
+      }
+    }
+    #{$check} {
+      width: 26px;
+      height: 26px;
+      margin-left: 10px;
+      @include p(display, inline-flex);
+      @include p(align-items, center);
+      @include p(justify-content, center);
+      opacity: 0;
+      &.rounded {
+        background: $_color-white;
+        color: $_color-primary;
+        border-radius: 50%;
+        font-size: 1.3em;
+        margin-left: 5px;
+        ~ #{$text} {
+          margin-left: -31px;
+        }
+      }
+
+      ~ #{$text} {
+        margin-left: -36px;
+        transition: inherit;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,145 @@
+// Map marker
+//
+// <div class="map-marker">
+//    <div class="map-marker-icon">
+//        <i class="material-icons">
+//            local_airport
+//        </i>
+//    </div>
+//  </div>
+// <div class="map-marker">
+//    <div class="map-marker-icon">
+//       <img src="..." alt="user"/>
+//    </div>
+//  </div>
+.map-marker {
+
+  $this: &;
+  $icon: #{$this}-icon;
+
+  @at-root {
+
+    #{$this} {
+      position: absolute;
+
+      &.right {
+        #{$icon} {
+          &:after {
+            border-width: 10px 0 10px 14px;
+            border-color: transparent transparent transparent $_color-primary;
+            left: 100%;
+            transform: translateY(-50%);
+            top: 50%;
+            margin: 0 0 0 -5px;
+          }
+        }
+      }
+
+      // .top
+      // .top.left
+      // .top.right
+      &.top {
+        #{$icon} {
+          &:after {
+            border-width: 0 10px 14px 10px;
+            border-color: transparent transparent $_color-primary transparent;
+            bottom: 100%;
+            top: auto;
+            margin: 0 0 -5px 0;
+          }
+        }
+        &.left {
+          #{$icon} {
+            border-top-left-radius: 0;
+            &:after {
+              content: none;
+            }
+          }
+        }
+        &.right {
+          #{$icon} {
+            border-top-right-radius: 0;
+            &:after {
+              content: none;
+            }
+          }
+        }
+      }
+
+      // .bottom.left
+      // .bottom.right
+      &.bottom {
+        &.left {
+          #{$icon} {
+            border-bottom-left-radius: 0;
+            &:after {
+              content: none;
+            }
+          }
+        }
+        &.right {
+          #{$icon} {
+            border-bottom-right-radius: 0;
+            &:after {
+              content: none;
+            }
+          }
+        }
+      }
+
+      &.left {
+        #{$icon} {
+          &:after {
+            border-width: 10px 14px 10px 0;
+            border-color: transparent $_color-primary transparent transparent;
+            right: 100%;
+            transform: translateY(-50%);
+            top: 50%;
+            margin: 0 -5px 0 0;
+          }
+        }
+      }
+
+      &.circle {
+        #{$icon} {
+          &, img {
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+    #{$icon} {
+      background: $_color-primary;
+      height: 38px;
+      width: 38px;
+      @include p(display, flex);
+      @include p(align-items, center);
+      @include p(justify-content, center);
+      color:  get-contrast-text($_color-primary);
+      border-radius: 50%;
+      position: absolute;
+      padding: 3px;
+      z-index: 4;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: 14px 10px 0 10px;
+        border-color: $_color-primary transparent transparent transparent;
+        border-style: solid;
+        top: 100%;
+        margin: -5px 0 0 0;
+        z-index: -2;
+      }
+
+      img {
+        border-radius: 50%;
+      }
+
+    }
+
+  }
+
+}

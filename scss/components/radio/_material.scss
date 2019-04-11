@@ -1,0 +1,96 @@
+// Radio material
+//
+// <label class="mat-radio">
+//            <input class="mat-radio-input" type="radio">
+//            <span class="mat-radio-check"></span>
+//            <span class="mat-radio-label">Option 1</span>
+//        </label>
+// <label class="mat-radio">
+//            <input class="mat-radio-input" type="radio">
+//            <span class="mat-radio-label">Option 1</span>
+//            <span class="mat-radio-check"></span>
+//        </label>
+.mat-radio{
+
+  $this : &;
+  $label : #{$this}-label;
+  $input : #{$this}-input;
+  $check: #{$this}-check;
+
+  @at-root {
+
+    #{$this} {
+      display: flex;
+      align-items: center;
+      &:hover, &:focus {
+        #{$check} {
+          border-color: $_color-primary;
+        }
+      }
+
+    }
+
+    #{$input} {
+      display: none;
+
+      &:checked {
+        ~ #{$check} {
+          border-color: $_color-primary;
+          &:before {
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+      }
+
+      &:disabled {
+        ~ #{$check} {
+          border-color: #b0b0b0;
+        }
+        &:checked {
+          ~ #{$check}, ~ #{$label} {
+            cursor: default;
+          }
+          ~ #{$check} {
+            &:before {
+              background: #b0b0b0;
+            }
+          }
+        }
+      }
+
+      + #{$label} {
+        padding-right: 15px;
+      }
+    }
+
+    #{$check}{
+      @include p(border-radius, 50%);
+      @include p(position, relative);
+      @include p(transition, all 0.3s ease);
+      flex: none;
+      width: 20px;
+      height: 20px;
+      border: solid 2px #b6b6b6;
+      &:before{
+        content:"";
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: $_color-primary;
+        position: absolute;
+        transition: inherit;
+      }
+
+      + #{$label} {
+        padding-left: 15px;
+      }
+    }
+
+    #{$label} {
+      flex: 1;
+    }
+  }
+}

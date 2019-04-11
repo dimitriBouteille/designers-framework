@@ -1,5 +1,5 @@
 /**
- * Designers Framework v0.3.0 (https://www.designers-framework.io)
+ * Designers Framework v1.0.0 (https://www.designers-framework.io)
  * Copyright 2018-2019 Dimitri BOUTEILLE
  * Licensed under MIT
  */
@@ -1142,24 +1142,565 @@ h6,
   margin-top: 5px;
 }
 
-.button, .fab-button, .icon-button, .swipe-button, .tag, .follow-link, .rating-icon, .material-checkbox-check, .switch-toggle, .material-switch-toggle, .material-switch-input {
+.mat-checkbox:hover .mat-checkbox-check, .mat-checkbox:focus .mat-checkbox-check {
+  border-color: #EC407A;
+}
+
+.mat-checkbox-input {
+  display: none;
+}
+
+.mat-checkbox-input:checked ~ .mat-checkbox-check {
+  background: #EC407A;
+  border-color: #EC407A;
+}
+
+.mat-checkbox-input:checked ~ .mat-checkbox-check:before {
+  opacity: 1;
+}
+
+.mat-checkbox-input:disabled ~ .mat-checkbox-check, .mat-checkbox-input:disabled ~ .mat-checkbox-label {
+  cursor: default;
+}
+
+.mat-checkbox-input:disabled ~ .mat-checkbox-check {
+  border-color: #b0b0b0;
+}
+
+.mat-checkbox-input:disabled:checked ~ .mat-checkbox-check {
+  background: #b0b0b0;
+}
+
+.mat-checkbox-input + .mat-checkbox-label {
+  padding-right: 15px;
+}
+
+.mat-checkbox-check {
+  position: relative;
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: solid 2px #b6b6b6;
+  border-radius: 3px;
+}
+
+.mat-checkbox-check:before {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+  font-family: "Material Icons";
+  content: "";
+  color: #FFFFFF;
+}
+
+.mat-checkbox-check + .mat-checkbox-label {
+  padding-left: 15px;
+}
+
+.mat-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.mat-radio:hover .mat-radio-check, .mat-radio:focus .mat-radio-check {
+  border-color: #EC407A;
+}
+
+.mat-radio-input {
+  display: none;
+}
+
+.mat-radio-input:checked ~ .mat-radio-check {
+  border-color: #EC407A;
+}
+
+.mat-radio-input:checked ~ .mat-radio-check:before {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.mat-radio-input:disabled ~ .mat-radio-check {
+  border-color: #b0b0b0;
+}
+
+.mat-radio-input:disabled:checked ~ .mat-radio-check, .mat-radio-input:disabled:checked ~ .mat-radio-label {
+  cursor: default;
+}
+
+.mat-radio-input:disabled:checked ~ .mat-radio-check:before {
+  background: #b0b0b0;
+}
+
+.mat-radio-input + .mat-radio-label {
+  padding-right: 15px;
+}
+
+.mat-radio-check {
+  -webkit-box-flex: 0;
+  -ms-flex: none;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: solid 2px #b6b6b6;
+}
+
+.mat-radio-check:before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
+  background: #EC407A;
+  position: absolute;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.mat-radio-check + .mat-radio-label {
+  padding-left: 15px;
+}
+
+.mat-radio-label {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.marker {
+  position: absolute;
+}
+
+.marker.on-hover .marker-label {
+  display: none;
+  -webkit-animation: markerFadeIn 0.6s;
+  animation: markerFadeIn 0.6s;
+}
+
+.marker.on-hover:hover .marker-label {
+  display: block;
+}
+
+.marker.right .marker-label {
+  left: 50%;
+  right: auto;
+  border-radius: 14px 14px 14px 0;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+
+.marker.right .marker-label:before {
+  left: 0;
+  right: auto;
+  border-width: 12px 12px 0 0;
+  border-color: #EC407A transparent transparent transparent;
+}
+
+.marker.bottom .marker-label {
+  top: calc(100% + 15px);
+  bottom: auto;
+  border-radius: 14px 0 14px 14px;
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+}
+
+.marker.bottom .marker-label:before {
+  bottom: 100%;
+  top: auto;
+  right: 0;
+  border-width: 0 0 12px 12px;
+  border-color: transparent transparent #EC407A transparent;
+}
+
+.marker.bottom.right .marker-label {
+  border-radius: 0 14px 14px 14px;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+
+.marker.bottom.right .marker-label:before {
+  border-width: 12px 0 0 12px;
+  border-color: transparent transparent transparent #EC407A;
+}
+
+.marker.bottom.center .marker-label:before {
+  border-width: 0 12px 12px 12px;
+  border-color: transparent transparent #EC407A transparent;
+}
+
+.marker.center .marker-label {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 14px;
+  right: auto;
+}
+
+.marker.center .marker-label:before {
+  left: inherit;
+  -webkit-transform: inherit;
+  transform: inherit;
+  border-width: 12px 12px 0 12px;
+  border-color: #EC407A transparent transparent transparent;
+}
+
+.marker.to-scale-up .marker-label {
+  display: none;
+  -webkit-animation: markerScaleUp 0.45s;
+  animation: markerScaleUp 0.45s;
+}
+
+.marker.to-scale-up:hover .marker-label {
+  display: block;
+}
+
+.marker-pulse {
+  width: 12px;
+  height: 12px;
+  background: #EC407A;
+  border-radius: 50%;
+  position: relative;
+}
+
+.marker-pulse:after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  background: rgba(236, 64, 122, 0.4);
+  width: inherit;
+  height: inherit;
+  left: 0;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  top: 0;
+  z-index: -1;
+  -webkit-animation: pulseAnimation 1.2s infinite;
+  animation: pulseAnimation 1.2s infinite;
+}
+
+.marker-label {
+  position: absolute;
+  background: #EC407A;
+  padding: 8px 14px;
+  border-radius: 14px 14px 0 14px;
+  color: #FFFFFF;
+  right: 50%;
+  bottom: calc(100% + 15px);
+  white-space: nowrap;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+
+.marker-label:before {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 100%;
+  border-width: 0 12px 12px 0;
+  border-color: transparent #EC407A transparent transparent;
+}
+
+@-webkit-keyframes pulseAnimation {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  95% {
+    -webkit-transform: scale(4);
+    transform: scale(4);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulseAnimation {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  95% {
+    -webkit-transform: scale(4);
+    transform: scale(4);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes markerScaleUp {
+  0%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes markerScaleUp {
+  0%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes markerFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes markerFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.map-marker {
+  position: absolute;
+}
+
+.map-marker.right .map-marker-icon:after {
+  border-width: 10px 0 10px 14px;
+  border-color: transparent transparent transparent #EC407A;
+  left: 100%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  margin: 0 0 0 -5px;
+}
+
+.map-marker.top .map-marker-icon:after {
+  border-width: 0 10px 14px 10px;
+  border-color: transparent transparent #EC407A transparent;
+  bottom: 100%;
+  top: auto;
+  margin: 0 0 -5px 0;
+}
+
+.map-marker.top.left .map-marker-icon {
+  border-top-left-radius: 0;
+}
+
+.map-marker.top.left .map-marker-icon:after {
+  content: none;
+}
+
+.map-marker.top.right .map-marker-icon {
+  border-top-right-radius: 0;
+}
+
+.map-marker.top.right .map-marker-icon:after {
+  content: none;
+}
+
+.map-marker.bottom.left .map-marker-icon {
+  border-bottom-left-radius: 0;
+}
+
+.map-marker.bottom.left .map-marker-icon:after {
+  content: none;
+}
+
+.map-marker.bottom.right .map-marker-icon {
+  border-bottom-right-radius: 0;
+}
+
+.map-marker.bottom.right .map-marker-icon:after {
+  content: none;
+}
+
+.map-marker.left .map-marker-icon:after {
+  border-width: 10px 14px 10px 0;
+  border-color: transparent #EC407A transparent transparent;
+  right: 100%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  margin: 0 -5px 0 0;
+}
+
+.map-marker.circle .map-marker-icon, .map-marker.circle .map-marker-icon img {
+  border-radius: 8px;
+}
+
+.map-marker-icon {
+  background: #EC407A;
+  height: 38px;
+  width: 38px;
+  color: #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  padding: 3px;
+  z-index: 4;
+}
+
+.map-marker-icon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 14px 10px 0 10px;
+  border-color: #EC407A transparent transparent transparent;
+  border-style: solid;
+  top: 100%;
+  margin: -5px 0 0 0;
+  z-index: -2;
+}
+
+.map-marker-icon img {
+  border-radius: 50%;
+}
+
+.chip.border .chip-label {
+  border: solid 1px #bfbfbf;
+  background: none;
+}
+
+.chip.border .chip-label:hover {
+  border-color: #EC407A;
+  color: #EC407A;
+}
+
+.chip.border .chip-check.rounded {
+  background: #EC407A;
+  color: #FFFFFF;
+}
+
+.chip.border .chip-field:checked ~ .chip-label {
+  background: #fefafb;
+  color: #EC407A;
+  border-color: #EC407A;
+}
+
+.chip.to-light .chip-field:checked ~ .chip-label {
+  background: #facbdb;
+  color: #EC407A;
+}
+
+.chips .chip {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.chip-field {
+  display: none;
+}
+
+.chip-field:checked ~ .chip-label {
+  background: #EC407A;
+  color: #FFFFFF;
+}
+
+.chip-field:checked ~ .chip-label .chip-check {
+  opacity: 1;
+}
+
+.chip-field:checked ~ .chip-label .chip-check ~ .chip-text {
+  margin-left: 0;
+  padding-left: 8px;
+}
+
+.chip-text {
+  padding: 0 18px;
+}
+
+.chip-label {
+  position: relative;
+  height: 36px;
+  background: #f0f0f0;
+  border-radius: 18px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.chip-label:hover {
+  background: #e0e0e0;
+}
+
+.chip-check {
+  width: 26px;
+  height: 26px;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.chip-check.rounded {
+  background: #FFFFFF;
+  color: #EC407A;
+  border-radius: 50%;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+
+.chip-check.rounded ~ .chip-text {
+  margin-left: -31px;
+}
+
+.chip-check ~ .chip-text {
+  margin-left: -36px;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.button, .fab-button, .icon-button, .swipe-button, .tag, .follow-link, .rating-icon, .material-checkbox-check, .switch-toggle, .material-switch-toggle, .material-switch-input, .mat-checkbox-check, .mat-radio-check {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.button, .icon-button, .swipe-button, .tag, .avatar {
+.button, .icon-button, .swipe-button, .tag, .avatar, .chip-label, .chip-check {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.fab-button, .tag-label, .tag-action, .tags, .avatars, .rating, .material-checkbox, .uploader {
+.fab-button, .tag-label, .tag-action, .tags, .avatars, .rating, .material-checkbox, .uploader, .mat-checkbox, .map-marker-icon, .chips {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.button, .fab-button, .icon-button, .swipe-button, .tag, .tag-action, .avatar, .material-checkbox, .uploader {
+.button, .fab-button, .icon-button, .swipe-button, .tag, .tag-action, .avatar, .material-checkbox, .uploader, .mat-checkbox, .map-marker-icon, .chip-label, .chip-check {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1171,17 +1712,17 @@ h6,
   align-items: inherit;
 }
 
-.fab-button, .tag-label, .avatar, .uploader {
+.fab-button, .tag-label, .avatar, .uploader, .map-marker-icon, .chip-label, .chip-check {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-.fab-button {
+.fab-button, .mat-radio-check {
   border-radius: 50%;
 }
 
-.tags {
+.tags, .chips {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -1191,4 +1732,8 @@ h6,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.mat-radio-check {
+  position: relative;
 }
