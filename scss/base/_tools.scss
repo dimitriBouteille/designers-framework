@@ -6,7 +6,7 @@
   }
 }
 
-/// Bloc margin align (left, center, ...)
+///Bloc margin align (left, center, ...)
 .b {
   &-right {
     margin-left: auto;
@@ -168,12 +168,12 @@
 // Selection color
 ::selection {
   background: $_color-primary;
-  color: _get-color-by-contract($_color-primary);
+  color: get-contrast-text($_color-primary);
 }
 
 // Hidden
 .hidden, [hidden]{
-  @include _p(display, none);
+  display: none;
 }
 
 // Remove border-radius property
@@ -194,7 +194,7 @@
     @include p(align-items, start);
   }
   &-end {
-    @include p(align-items, end);
+    @include p(align-items, flex-end);
   }
   &-center {
     @include p(align-items, center);
@@ -207,7 +207,7 @@
     @include p(justify-content, center);
   }
   &-vertical {
-    @include p(flex-direction, columns);
+    @include p(flex-direction, column);
     &-reverse {
       @include p(flex-direction, columns-reverse);
     }
@@ -223,10 +223,10 @@
 // Justify-content property
 .justify {
   &-start {
-    @include p(justify-content, start);
+    @include p(justify-content, flex-start);
   }
   &-end {
-    @include p(justify-content, end);
+    @include p(justify-content, flex-end);
   }
   &-center {
     @include p(justify-content, center);

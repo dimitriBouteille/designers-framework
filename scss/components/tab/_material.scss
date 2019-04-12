@@ -1,0 +1,126 @@
+// Material tab
+//
+// <ul class="mat-tab">
+//    <li class="mat-tab-item">
+//        Users
+//    </li>
+//    <li class="mat-tab-item">
+//        Products
+//    </li>
+//    <li class="mat-tab-item">
+//        Orders
+//    </li>
+//  </ul>
+// <ul class="mat-tab align-vertical">
+//    <li class="mat-tab-item">
+//        Users
+//    </li>
+//    <li class="mat-tab-item">
+//        Products
+//    </li>
+//    <li class="mat-tab-item">
+//        Orders
+//    </li>
+//  </ul>
+.mat-tab {
+
+  $this: &;
+  $item: #{$this}-item;
+
+  @at-root {
+
+    #{$this} {
+      @include p(display, flex);
+      @include p(flex-wrap, wrap);
+      box-shadow: inset 0 -2px 0 0 #eeeeee;
+      height: 100%;
+
+      &.align-vertical {
+        box-shadow: inset 2px 0 0 0 #eeeeee;
+
+        #{$item} {
+          justify-content: flex-start;
+          height: auto;
+          padding: 8px 0 8px 16px;
+          &:after {
+            left: 0;
+            right: auto;
+            height: auto;
+            width: 2px;
+            bottom: 50%;
+            top: 50%;
+          }
+
+          &.is-active {
+            &:after {
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: auto;
+            }
+          }
+        }
+
+        &.align-right {
+          box-shadow: inset -2px 0 0 0 #eeeeee;
+          #{$item} {
+            @include p(justify-content, flex-end);
+            padding: 8px 16px 8px 0;
+            &:after {
+              right: 0;
+              left: auto;
+            }
+          }
+        }
+      }
+      &.has-background {
+        box-shadow: none;
+        #{$item} {
+          color: rgba($_color-white, 0.6);
+          &:after {
+            background: $_color-white;
+          }
+          &.is-active {
+            color: $_color-white;
+          }
+        }
+      }
+
+    }
+    #{$item} {
+      height: 48px;
+      padding: 0 16px;
+      position: relative;
+      cursor: pointer;
+      @include p(transition, all 0.3s ease);
+      @include p(display, flex);
+      @include p(align-items, center);
+      @include p(justify-content, center);
+      text-transform: uppercase;
+      font-size: 14px;
+      &:after {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        left: 50%;
+        right: 50%;
+        background: $_color-primary;
+        content: "";
+        transition: inherit;
+      }
+
+      &.is-active {
+        color: $_color-primary;
+        &:after {
+          left: 0;
+          right: 0;
+        }
+      }
+      &.is-disabled {
+        color: #BBBBBB;
+        cursor: default;
+      }
+    }
+  }
+
+}

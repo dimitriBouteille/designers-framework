@@ -18,11 +18,12 @@
 @import "components/switch/default";
 @import "components/switch/material";
 @import "components/uploader";
-
 @import "components/checkbox/material";
 @import "components/radio/material";
 @import "components/marker/default";
 @import "components/marker/map";
 @import "components/chip";
+
+@import "components/tab/material";
 
 @include load-placeholder();
