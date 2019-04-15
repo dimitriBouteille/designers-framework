@@ -1,0 +1,125 @@
+// Progress bar
+//
+// <div class="progress">
+//    <div class="progress-bar" style="width: 25%"></div>
+//  </div>
+// <div class="progress">
+//    <div class="progress-bar" style="width: 25%"></div>
+//    <div class="progress-bar" style="background: #3d2df3; width: 40%"></div>
+//    <div class="progress-bar" style="background: #8075f7; width: 10%"></div>
+//  </div>
+// <div class="progress">
+//    <div class="progress-bar" style="width: 56%">
+//        <div class="progress-tooltip">
+//            56%
+//        </div>
+//    </div>
+//  </div>
+.progress {
+
+  $this: &;
+  $bar: #{$this}-bar;
+  $tooltip: #{$this}-tooltip;
+
+  @at-root {
+
+    #{$this} {
+      position: relative;
+      height: 22px;
+      background: lighten($_color-black, 75%);
+      @include p(display, flex);
+      @include p(align-items, center);
+
+      &.rounded {
+        border-radius: 11px;
+        #{$bar} {
+          border-radius: 11px 0 0 11px;
+          &:last-child {
+            border-bottom-right-radius: 11px;
+            border-top-right-radius: 11px;
+          }
+
+          ~ #{$bar} {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
+
+      }
+      &.small {
+        height: 10px;
+        &.border {
+          padding: 1px;
+        }
+      }
+      &.tiny {
+        height: 5px;
+      }
+      &.border {
+        background: none;
+        border: solid 1px lighten($_color-black, 65%);
+        padding: 3px;
+      }
+      &.tooltip-on-hover {
+        #{$tooltip} {
+          display: none;
+          animation: fadeIn 0.3s;
+        }
+        #{$bar} {
+          &:hover {
+            #{$tooltip} {
+              @include p(display, flex)
+            }
+          }
+        }
+      }
+
+
+    }
+    #{$bar} {
+      height: 100%;
+      background: $_color-primary;
+      color: get-contrast-text($_color-primary);
+      position: relative;
+      @include p(display, flex);
+      @include p(align-items, center);
+      @include p(justify-content, center);
+      &:not(:empty) {
+        min-width: 40px;
+      }
+
+      ~ #{$bar} {
+        border-left: solid 4px lighten($_color-black, 75%);
+      }
+    }
+
+    #{$tooltip} {
+      position: absolute;
+      right: 0;
+      bottom: calc(100% + 10px);
+      background: $_color-black;
+      height: 26px;
+      @include p(display, flex);
+      @include p(align-items, center);
+      @include p(justify-content, center);
+      padding: 0 13px;
+      border-radius: 13px;
+      transform: translateX(50%);
+      font-size: 0.8em;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 8px 0 8px;
+        top: 100%;
+        border-color: $_color-black transparent transparent transparent;
+      }
+
+      &.center {
+        right: 50%;
+      }
+    }
+  }
+}

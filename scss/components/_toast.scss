@@ -1,0 +1,161 @@
+// Toast
+//
+// <div class="toast">
+//    <div class="toast-body">
+//        <p>Lorem ipsum dolor sit amet</p>
+//        <div class="toast-close">
+//            <i class="material-icons">close</i>
+//        </div>
+//    </div>
+//  </div>
+// <div class="toast">
+//    <div class="toast-header">
+//        <h4 class="toast-title">Usce luctus volutpat ipsum</h4>
+//        <p class="toast-time">3 min ago</p>
+//        <div class="toast-close">
+//            <i class="material-icons">close</i>
+//        </div>
+//    </div>
+//    <div class="toast-body">
+//        <p>Integer nibh lectus, vehicula eget nisl ac, laoreet accumsan turpis.
+//            Morbi id ultrices tellus.</p>
+//    </div>
+// </div>
+// <div class="toasts">
+///   <div class="toast">...</div>
+///   <div class="toast">...</div>
+//    ...
+// </div>
+.toast {
+
+  $this: &;
+  $body: #{$this}-body;
+  $close: #{$this}-close;
+  $icon: #{$this}-icon;
+  $header: #{$this}-header;
+  $title: #{$this}-title;
+  $time: #{$this}-time;
+  $progress: #{$this}-progress;
+  $list: #{$this}s;
+
+  @at-root {
+
+    #{$this} {
+      background: $_color-black;
+      position: absolute;
+      box-shadow: 0 5px 15px lighten(black, 80%);
+      color: $_color-white;
+      max-width: 350px;
+
+      @each $class, $_color in $_toast-variations {
+
+        &.#{$class} {
+          background: $_color;
+          color: get-contrast-text($_color);
+          #{$header} {
+            border-bottom-color: darken($_color, 5%);
+          }
+          #{$time} {
+            color: darken($_color, 50%);
+          }
+          #{$close} {
+            color: darken($_color, 20%);
+          }
+          #{$progress} {
+            background: lighten($_color, 8%);
+            &:before {
+              background: darken($_color, 5%);
+            }
+          }
+        }
+      }
+    }
+    #{$header} {
+      padding: 8px 0;
+      margin: 0 13px;
+      @include p(display, flex);
+      @include p(align-items, center);
+      border-bottom: solid 1px rgb(80,80,80);
+      ~ #{$body} {
+        padding: 13px;
+      }
+      #{$close} {
+        position: relative;
+        margin-left: 8px;
+        right: 0;
+        top: 0;
+
+      }
+    }
+    #{$time} {
+      margin-left: auto;
+      font-size: 0.7em;
+      color: darken($_color-white, 20%);
+    }
+    #{$title} {
+      font-size: 1em;
+      font-weight: 600;
+      flex: 1;
+    }
+    #{$body} {
+      padding: 13px 16px 13px 13px;
+      font-size: 0.85em;
+      @include p(display, flex);
+      @include p(align-items, center);
+    }
+    #{$close} {
+      color: darken($_color-white, 20%);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 15px;
+      line-height: 1;
+      margin-left: 8px;
+      @include p(display, flex);
+      &:hover {
+        color: $_color-primary;
+      }
+      i {
+        font-size: inherit;
+      }
+    }
+    #{$icon} {
+      margin-right: 15px;
+      font-size: 1.9em;
+    }
+    #{$progress} {
+      height: 3px;
+      background: rgb(80,80,80);
+      position: relative;
+      &:before {
+        content: "";
+        background: $_color-primary;
+        display: block;
+        width: 0;
+        height: 100%;
+        animation: toastProgress 4s forwards;
+      }
+    }
+    #{$list} {
+      @include p(display, flex);
+      @include p(flex-direction, column);
+      @include p(align-items, flex-end);
+      #{$this} {
+        position: relative;
+        ~ #{$this} {
+          margin-top: 15px;
+        }
+      }
+    }
+
+  }
+
+}
+
+@keyframes toastProgress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

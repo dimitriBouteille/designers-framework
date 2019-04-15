@@ -1,0 +1,55 @@
+// Badge
+//
+// <span class="badge">8</span>
+.badge {
+
+  min-width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  background: $_color-primary;
+  color: get-contrast-text($_color-primary);
+  padding: 0 9px;
+  border-radius: 20px;
+  font-size: 13px;
+
+  &.outlined {
+    border: solid 1px $_color-primary;
+    background: none;
+    color: $_color-primary;
+  }
+
+  &.square {
+    border-radius: 7px;
+  }
+
+  &.light {
+    background: lighten($_color-primary, 35%);
+    color: $_color-primary;
+  }
+
+  &.large {
+    height: 28px;
+    min-width: 28px;
+    font-size: 14px;
+    padding: 0 12px;
+  }
+
+
+  @each $class, $color in $_badge-variations {
+
+    &.#{$class} {
+      background: $color;
+      color: get-contrast-text($color);
+      &.outlined {
+        border-color : $color;
+        color: $color;
+      }
+      &.light {
+        background: lighten($color, 35%);
+        color: $color;
+      }
+    }
+  }
+
+}

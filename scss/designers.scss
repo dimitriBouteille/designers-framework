@@ -25,5 +25,8 @@
 @import "components/chip";
 
 @import "components/tab/material";
+@import "components/badge";
+@import "components/toast";
+@import "components/chat";
 
 @include load-placeholder();

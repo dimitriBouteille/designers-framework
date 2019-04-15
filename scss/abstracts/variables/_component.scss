@@ -1,0 +1,20 @@
+
+// Toast variations color
+// default color is $_color-black
+$_toast-variations : (
+        error: $_color-error,
+        success: $_color-success,
+        info: $_color-info,
+        warning: $_color-warning,
+) !default;
+
+// Badge variations color
+// default color is $_color-primary
+$_badge-variations : (
+        secondary : $_color-secondary,
+        error: $_color-error,
+        success: $_color-success,
+        info: $_color-info,
+        warning: $_color-warning,
+        black: $_color-black,
+) !default;
