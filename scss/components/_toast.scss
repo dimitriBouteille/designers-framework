@@ -46,7 +46,7 @@
       box-shadow: 0 5px 15px lighten(black, 80%);
       color: $_color-white;
       max-width: 350px;
-      z-index: $_zindex-toast;
+      z-index: $_zIndex-toast;
 
       @each $class, $_color in $_toast-color-variations {
 

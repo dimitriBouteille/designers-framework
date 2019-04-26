@@ -3,10 +3,13 @@
 $_default-transition : all 0.3s ease !default;
 
 // Z-index property for toast component
-$_zindex-toast :      1010 !default;
+$_zIndex-toast :      1010 !default;
 
 // Z-index property for fab-button component
-$_zindex-fab-button : 1020 !default;
+$_zIndex-fab-button : 1020 !default;
+
+// Z-index property for modal component
+$_zIndex-modal :      1050 !default;
 
 // Background color for tooltip component
 $_tooltip-background-color :    rgb(10,10,10) !default;
@@ -94,4 +97,11 @@ $_dot-color-variations : (
         secondary: $_color-secondary,
         white : $_color-white,
         black : $_color-black,
+) !default;
+
+// Modal size variations
+// default size is 550px (medium)
+$_modal-size-variations : (
+        large : 1100px,
+        small: 350px,
 ) !default;

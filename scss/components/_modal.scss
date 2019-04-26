@@ -1,0 +1,110 @@
+// Modal
+//
+// <div class="modal" id="modal-1">
+//    <div class="modal-dialog">
+//        <button class="modal-close">Close</button>
+//        <header class="modal-header">
+//            <h4>Lorem ipsum dolor sit amet</h4>
+//        </header>
+//        <div class="modal-body">
+//            <p>...</p>
+//        </div>
+//    </div>
+//  </div>
+.modal {
+
+  $this: &;
+  $dialog: #{$this}-dialog;
+  $close: #{$this}-close;
+  $body: #{$this}-body;
+  $header: #{$this}-header;
+
+  @at-root {
+
+    #{$this} {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: $_zIndex-modal;
+      background: transparent;
+      @include p(display, flex);
+      @include p(align-items, center);
+      @include p(justify-content, center);
+      visibility: hidden;
+      transition: all 0.35s ease;
+
+      &.align-top {
+        #{$dialog} {
+          align-self: flex-start;
+          margin-top: 100px;
+        }
+      }
+      &.to-scale-up {
+        #{$dialog} {
+          transform: scale(0);
+          opacity: 1;
+        }
+        &.is-open {
+          #{$dialog} {
+            transition-delay: 0.05s;
+            transform: scale(1);
+          }
+        }
+      }
+      &.is-open {
+        background:  rgba($_color-black, 0.9);
+        visibility: visible;
+        #{$dialog} {
+          opacity: 1;
+          transform: none;
+          transition-delay: 0.15s;
+        }
+      }
+
+      @each $class, $size in $_modal-size-variations {
+        &.#{$class} {
+          #{$dialog} {
+            max-width: $size;
+          }
+        }
+      }
+    }
+    #{$dialog} {
+      background: $_color-white;
+      max-width: 550px;
+      padding: 30px 0;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.164);
+      position: relative;
+      max-height: calc(100vh - 300px);
+      @include p(display, flex);
+      @include p(flex-direction, column);
+      opacity: 0;
+      transform: translateY(-60px);
+      transition: all 0.4s ease;
+    }
+    #{$header} {
+      padding: 0 30px 15px 30px;
+    }
+    #{$body} {
+      flex: 1;
+      padding: 0 30px;
+      overflow-x: auto;
+    }
+    #{$close} {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      margin-bottom: 5px;
+      color: rgba($_color-white, 0.6);
+      font-size: 0.9em;
+      transition: all 0.2s ease;
+      &:hover, &:focus {
+        color: $_color-white;
+      }
+    }
+
+  }
+
+}

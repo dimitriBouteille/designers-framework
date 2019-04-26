@@ -1,3 +1,8 @@
+/**
+ * Designers Framework v1.0.0 (https://www.designers-framework.io)
+ * Copyright 2018-2019 Dimitri BOUTEILLE
+ * Licensed under MIT
+ */
 @charset "UTF-8";
 @-webkit-keyframes fadeOut {
   0% {
@@ -2672,6 +2677,101 @@ textarea {
   margin-left: 40px;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  background: transparent;
+  visibility: hidden;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.modal.align-top .modal-dialog {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin-top: 100px;
+}
+
+.modal.to-scale-up .modal-dialog {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  opacity: 1;
+}
+
+.modal.to-scale-up.is-open .modal-dialog {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.modal.is-open {
+  background: rgba(50, 50, 50, 0.9);
+  visibility: visible;
+}
+
+.modal.is-open .modal-dialog {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+.modal.large .modal-dialog {
+  max-width: 1100px;
+}
+
+.modal.small .modal-dialog {
+  max-width: 350px;
+}
+
+.modal-dialog {
+  background: #FFFFFF;
+  max-width: 550px;
+  padding: 30px 0;
+  -webkit-box-shadow: 0 2px 20px rgba(0, 0, 0, 0.164);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.164);
+  position: relative;
+  max-height: calc(100vh - 300px);
+  opacity: 0;
+  -webkit-transform: translateY(-60px);
+  transform: translateY(-60px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.modal-header {
+  padding: 0 30px 15px 30px;
+}
+
+.modal-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 30px;
+  overflow-x: auto;
+}
+
+.modal-close {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9em;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover, .modal-close:focus {
+  color: #FFFFFF;
+}
+
 h1, .title-h1 {
   font-size: 2.4em;
 }
@@ -2951,7 +3051,7 @@ h6, .title-h6 {
   display: inline-flex;
 }
 
-.fab-button, .tag-label, .tag-action, .tags, .avatars, .rating, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chips, .mat-tab, .mat-tab-item, .toast-header, .toast-body, .toast-close, .toasts, .breadcrumb, .progress, .progress.tooltip-on-hover .progress-bar:hover .progress-tooltip, .progress-bar, .progress-tooltip, .dots, .pagination, .pagination-item.is-current, .comment, .comment-header, .d-flex {
+.fab-button, .tag-label, .tag-action, .tags, .avatars, .rating, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chips, .mat-tab, .mat-tab-item, .toast-header, .toast-body, .toast-close, .toasts, .breadcrumb, .progress, .progress.tooltip-on-hover .progress-bar:hover .progress-tooltip, .progress-bar, .progress-tooltip, .dots, .pagination, .pagination-item.is-current, .comment, .comment-header, .modal, .modal-dialog, .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2965,7 +3065,7 @@ h6, .title-h6 {
   display: inline-grid;
 }
 
-.button, .fab-button, .swipe-button, .tag, .tag-action, .avatar, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .badge, .toast-header, .toast-body, .progress, .progress-bar, .progress-tooltip, .pagination, .pagination-item.is-current, .align-center, .align-full {
+.button, .fab-button, .swipe-button, .tag, .tag-action, .avatar, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .badge, .toast-header, .toast-body, .progress, .progress-bar, .progress-tooltip, .pagination, .pagination-item.is-current, .modal, .align-center, .align-full {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -2995,7 +3095,7 @@ h6, .title-h6 {
   align-items: stretch;
 }
 
-.fab-button, .tag-label, .avatar, .uploader, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .progress-bar, .progress-tooltip, .pagination-item.is-current, .align-full, .justify-center {
+.fab-button, .tag-label, .avatar, .uploader, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .progress-bar, .progress-tooltip, .pagination-item.is-current, .modal, .align-full, .justify-center {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -3039,7 +3139,7 @@ h6, .title-h6 {
   flex-direction: row-reverse;
 }
 
-.uploader, .toasts, .align-vertical {
+.uploader, .toasts, .modal-dialog, .align-vertical {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
