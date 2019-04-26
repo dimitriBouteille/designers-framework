@@ -1,0 +1,41 @@
+
+.pagination {
+
+  $this: &;
+  $item: #{$this}-item;
+  $link: #{$this}-link;
+
+  @at-root {
+
+    #{$this} {
+      @include p(display, flex);
+      @include p(flex-wrap, wrap);
+      @include p(align-items, center);
+    }
+
+    #{$item} {
+      &.is-current {
+        @include p(display, flex);
+        @include p(align-items, center);
+        @include p(justify-content, center);
+
+        width: 30px;
+        height: 30px;
+        background: $_color-primary;
+        border-radius: 50%;
+        color: get-contrast-text($_color-primary);
+      }
+
+      ~ #{$item} {
+        margin-left: 20px;
+      }
+
+    }
+    #{$link} {
+      transition: all 0.3s ease;
+      &:hover, &:focus {
+        color: $_color-primary;
+      }
+    }
+  }
+}

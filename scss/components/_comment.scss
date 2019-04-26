@@ -1,0 +1,102 @@
+// Comment
+//
+// <div class="comment">
+//    <div class="comment-avatar avatar">
+//        <img src="..." />
+//    </div>
+//    <div class="comment-body">
+//        <header class="comment-header">
+//            <p class="comment-user">John P.</p>
+//            <p class="comment-date">12 days ago</p>
+//        </header>
+//        <p class="comment-content">...</p>
+//        <footer class="comment-footer">
+//            <button class="comment-action">Reply</button>
+//            <button class="comment-action">Like</button>
+//        </footer>
+//    </div>
+//  </div>
+// <div class="comments">
+//    <div class="comment">...</div>
+//    <div class="comment-conversation">
+//        <div class="comment">...</div>
+//        <div class="comment-reply">
+//          <div class="comment">...</div>
+//          <div class="comment">...</div>
+//        </div>
+//  </div>
+.comment {
+
+  $this: &;
+  $avatar : #{$this}-avatar;
+  $body: #{$this}-body;
+  $header: #{$this}-header;
+  $user: #{$this}-user;
+  $date: #{$this}-date;
+  $footer: #{$this}-footer;
+  $action: #{$this}-action;
+  $conversation: #{$this}-conversation;
+  $comments: #{$this}s;
+  $reply: #{$this}-reply;
+
+  @at-root {
+
+    #{$this} {
+      @include p(display, flex);
+      margin-top: 30px;
+    }
+    #{$body} {
+      flex: 1;
+    }
+    #{$avatar} {
+      margin-right: 15px;
+    }
+    #{$header} {
+      @include p(display, flex);
+      @include p(flex-wrap, wrap);
+      margin-bottom: 4px;
+    }
+    #{$user} {
+      font-weight: 600;
+    }
+    #{$date} {
+      color: $_color-grey;
+      margin-left: 8px;
+    }
+    #{$footer} {
+      margin-top: 6px;
+    }
+    #{$action} {
+      color: $_color-grey;
+      font-size: 0.9em;
+      &:hover, &:focus {
+        color: $_color-primary;
+      }
+
+      ~ #{$action} {
+        margin-left: 8px;
+      }
+    }
+    #{$conversation} {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+    }
+    #{$comments} {
+      > #{$this}:first-of-type {
+        margin-top: 0;
+      }
+      &.with-separator {
+        #{$body} {
+          padding-bottom: 15px;
+          border-bottom: solid 1px rgb(230,230,230);
+        }
+      }
+    }
+    #{$reply} {
+      margin-left: 40px;
+    }
+
+  }
+
+}

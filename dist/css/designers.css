@@ -1,8 +1,3 @@
-/**
- * Designers Framework v1.0.0 (https://www.designers-framework.io)
- * Copyright 2018-2019 Dimitri BOUTEILLE
- * Licensed under MIT
- */
 @charset "UTF-8";
 @-webkit-keyframes fadeOut {
   0% {
@@ -2595,6 +2590,88 @@ textarea {
   box-shadow: inset 0 0 0 10px;
 }
 
+.pagination-item.is-current {
+  width: 30px;
+  height: 30px;
+  background: #2d80f3;
+  border-radius: 50%;
+  color: #FFFFFF;
+}
+
+.pagination-item ~ .pagination-item {
+  margin-left: 20px;
+}
+
+.pagination-link {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.pagination-link:hover, .pagination-link:focus {
+  color: #2d80f3;
+}
+
+.comment {
+  margin-top: 30px;
+}
+
+.comment-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.comment-avatar {
+  margin-right: 15px;
+}
+
+.comment-header {
+  margin-bottom: 4px;
+}
+
+.comment-user {
+  font-weight: 600;
+}
+
+.comment-date {
+  color: #969696;
+  margin-left: 8px;
+}
+
+.comment-footer {
+  margin-top: 6px;
+}
+
+.comment-action {
+  color: #969696;
+  font-size: 0.9em;
+}
+
+.comment-action:hover, .comment-action:focus {
+  color: #2d80f3;
+}
+
+.comment-action ~ .comment-action {
+  margin-left: 8px;
+}
+
+.comment-conversation:not(:first-child) {
+  margin-top: 30px;
+}
+
+.comments > .comment:first-of-type {
+  margin-top: 0;
+}
+
+.comments.with-separator .comment-body {
+  padding-bottom: 15px;
+  border-bottom: solid 1px #e6e6e6;
+}
+
+.comment-reply {
+  margin-left: 40px;
+}
+
 h1, .title-h1 {
   font-size: 2.4em;
 }
@@ -2874,7 +2951,7 @@ h6, .title-h6 {
   display: inline-flex;
 }
 
-.fab-button, .tag-label, .tag-action, .tags, .avatars, .rating, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chips, .mat-tab, .mat-tab-item, .toast-header, .toast-body, .toast-close, .toasts, .breadcrumb, .progress, .progress.tooltip-on-hover .progress-bar:hover .progress-tooltip, .progress-bar, .progress-tooltip, .dots, .d-flex {
+.fab-button, .tag-label, .tag-action, .tags, .avatars, .rating, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chips, .mat-tab, .mat-tab-item, .toast-header, .toast-body, .toast-close, .toasts, .breadcrumb, .progress, .progress.tooltip-on-hover .progress-bar:hover .progress-tooltip, .progress-bar, .progress-tooltip, .dots, .pagination, .pagination-item.is-current, .comment, .comment-header, .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2888,7 +2965,7 @@ h6, .title-h6 {
   display: inline-grid;
 }
 
-.button, .fab-button, .swipe-button, .tag, .tag-action, .avatar, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .badge, .toast-header, .toast-body, .progress, .progress-bar, .progress-tooltip, .align-center, .align-full {
+.button, .fab-button, .swipe-button, .tag, .tag-action, .avatar, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .badge, .toast-header, .toast-body, .progress, .progress-bar, .progress-tooltip, .pagination, .pagination-item.is-current, .align-center, .align-full {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -2918,7 +2995,7 @@ h6, .title-h6 {
   align-items: stretch;
 }
 
-.fab-button, .tag-label, .avatar, .uploader, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .progress-bar, .progress-tooltip, .align-full, .justify-center {
+.fab-button, .tag-label, .avatar, .uploader, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .progress-bar, .progress-tooltip, .pagination-item.is-current, .align-full, .justify-center {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -2950,7 +3027,7 @@ h6, .title-h6 {
   border-radius: 0;
 }
 
-.tags, .chips, .mat-tab, .breadcrumb {
+.tags, .chips, .mat-tab, .breadcrumb, .pagination, .comment-header {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
