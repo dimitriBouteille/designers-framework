@@ -1,0 +1,47 @@
+// Breadcrumb
+//
+// <ul class="breadcrumb">
+//    <li class="breadcrumb-item">
+//        <a href="#" class="breadcrumb-link">Home</a>
+//    </li>
+//    <li class="breadcrumb-separator">></li>
+//    <li class="breadcrumb-item">
+//        <a href="#" class="breadcrumb-link">Europe</a>
+//    </li>
+//    <li class="breadcrumb-separator">></li>
+//    <li class="breadcrumb-item is-active">
+//       Lyon-Saint Exupéry
+//    </li>
+//  </ul>
+.breadcrumb {
+
+  $this: &;
+  $item: #{$this}-item;
+  $separator: #{$this}-separator;
+  $link: #{$this}-link;
+
+  @at-root {
+
+    #{$this} {
+      @include p(display, flex);
+      @include p(flex-wrap, wrap);
+      color: rgb(150,150,150);
+    }
+    #{$separator} {
+      margin: 0 10px;
+    }
+    #{$item} {
+      &.is-active {
+        color: $_color-black;
+        font-weight: 600;
+      }
+    }
+    #{$link} {
+      @include p(transition,$_default-transition);
+      &:hover, &:focus {
+        color: $_color-primary;
+      }
+    }
+  }
+
+}

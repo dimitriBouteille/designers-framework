@@ -46,8 +46,9 @@
       box-shadow: 0 5px 15px lighten(black, 80%);
       color: $_color-white;
       max-width: 350px;
+      z-index: $_zindex-toast;
 
-      @each $class, $_color in $_toast-variations {
+      @each $class, $_color in $_toast-color-variations {
 
         &.#{$class} {
           background: $_color;
@@ -106,7 +107,7 @@
     #{$close} {
       color: darken($_color-white, 20%);
       cursor: pointer;
-      transition: all 0.3s ease;
+      @include p(transition, $_default-transition);
       font-size: 15px;
       line-height: 1;
       margin-left: 8px;

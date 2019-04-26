@@ -1,10 +1,10 @@
-// Follow link
+// Follow button
 //
 // <a href="#" class="follow-link">Hello world</a>
 .follow-link {
 
   position: relative;
-  @include  p(transition, all 0.3s ease);
+  @include  p(transition, $_default-transition);
   padding-bottom: 6px;
   cursor: pointer;
 
@@ -26,6 +26,18 @@
       right: 0;
       left: 75%;
     }
+  }
+
+  @each $class, $color in $_link-color-variations {
+    &.#{$class} {
+      &:after {
+        background: $color;
+      }
+      &:hover, &:focus {
+        color: $color;
+      }
+    }
+
   }
 
 }

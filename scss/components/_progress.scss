@@ -46,15 +46,25 @@
         }
 
       }
-      &.small {
-        height: 10px;
-        &.border {
-          padding: 1px;
+
+      @each $class, $height in $_progress-size-variations {
+        &.small {
+          height: $height;
+          &.border {
+            padding: 1px;
+          }
         }
       }
-      &.tiny {
-        height: 5px;
+      @each $class, $color in $_progress-color-variations {
+        &.#{$class} {
+          #{$bar} {
+            background: $color;
+            color: get-contrast-text($color);
+          }
+        }
+
       }
+
       &.border {
         background: none;
         border: solid 1px lighten($_color-black, 65%);
@@ -92,12 +102,11 @@
         border-left: solid 4px lighten($_color-black, 75%);
       }
     }
-
     #{$tooltip} {
       position: absolute;
       right: 0;
       bottom: calc(100% + 10px);
-      background: $_color-black;
+      background: $_tooltip-background-color;
       height: 26px;
       @include p(display, flex);
       @include p(align-items, center);
@@ -114,12 +123,14 @@
         border-style: solid;
         border-width: 8px 8px 0 8px;
         top: 100%;
-        border-color: $_color-black transparent transparent transparent;
+        border-color: $_tooltip-background-color transparent transparent transparent;
       }
 
       &.center {
         right: 50%;
       }
     }
+
   }
+
 }

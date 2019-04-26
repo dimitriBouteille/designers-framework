@@ -1,4 +1,4 @@
-// Underline link
+// Link underline
 //
 // <a href="#" class="underline-link">Hover me</a>
 // <a href="#" class="underline-link reversed">Hover me</a>
@@ -18,6 +18,14 @@
     background-position: 100% 100%;
     &:hover, &:focus {
       background-position: 0 100%;
+    }
+  }
+
+  @each $class, $color in $_link-color-variations {
+
+    &.#{$class} {
+      color: $color;
+      background-image: linear-gradient($color)
     }
   }
 

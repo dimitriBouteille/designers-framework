@@ -42,27 +42,22 @@
         border: solid 3px $_color-offline;
       }
 
-      &.medium{
-        width: 38px;
-        height: 38px;
+      @each $class, $size in $_avatar-size-variations {
 
-        #{$status} {
-          width: 13px;
-          height: 13px;
+        &.#{$class} {
+          width: $size;
+          height: $size;
+
+          #{$status} {
+            $z : ($size * 36) / 100;
+            @if $z < 11px {
+              $z : 11px;
+            }
+            width: $z ;
+            height: $z;
+          }
+
         }
-      }
-
-      &.small{
-        width: 30px;
-        height: 30px;
-        border-width: 2px;
-
-        #{$status} {
-          width: 12px;
-          height: 12px;
-          border-width: 1px;
-        }
-
       }
 
     }

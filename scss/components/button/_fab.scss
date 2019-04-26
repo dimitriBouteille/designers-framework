@@ -16,23 +16,21 @@
       @include p(justify-content, center);
       @include p(align-items, center);
       @include p(border-radius, 50%);
-      @include p(transition, all 0.3s ease);
+      @include p(transition, $_default-transition);
       box-shadow: 0 -1px 3px rgba(0,0,0,0.12), 0 -1px 2px rgba(0,0,0,0.24);
-      z-index: 500;
-      @include background-button;
+      z-index: $_zindex-fab-button;
+      background: $_color-primary;
+      color: get-contrast-text($_color-primary);
 
-      &.medium {
-        width: 45px;
-        height: 45px;
-      }
-
-      &.small {
-        width: 35px;
-        height: 35px;
+      @each $class, $size in $_fab-button-size-variations {
+        &.#{$class} {
+          width: $size;
+          height: $size;
+        }
       }
 
       &:hover, &:focus {
-        background: $_color-secondary;
+        background: darken($_color-primary, 10%);
       }
 
     }

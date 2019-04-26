@@ -1,31 +1,202 @@
 // Default button
 //
-// <button class="button">Button</button>
+// <button class="button">Hover me</button>
+// <button class="button">
+//    <i class="material-icons button-icon">favorite</i>
+//    <span class="button-text">Hover me</span>
+//  </button>
 .button {
 
   $this: &;
+  $text: #{$this}-text;
+  $icon: #{$this}-icon;
 
   @at-root {
 
     #{$this} {
 
-      @include base-button;
+      @include p(transition, $_default-transition);
+      @include p(display, inline-flex);
+      @include p(align-items, center);
+      background: $_color-primary;
+      color: get-contrast-text($_color-primary);
+      cursor: pointer;
+      padding: 12px 23px;
+      position: relative;
 
       &:hover, &:focus {
-        @include background-button;
+        background: darken($_color-primary, 10);
+        @if get-contrast-text(darken($_color-primary, 10)) != get-contrast-text($_color-primary) {
+          color: get-contrast-text(darken($_color-primary, 10));
+        }
       }
 
-      @include to-fade-in-button;
-
-      &.to-transparent {
+      &.rounded {
+        border-radius: 40px;
+      }
+      &.outlined {
+        border: solid 1px $_color-primary;
+        color: $_color-primary;
+        background: none;
+        &:hover, &:focus {
+          background: $_color-primary;
+          color: get-contrast-text($_color-primary);
+        }
+      }
+      &.shadow {
+        border: none;
+        box-shadow: 0 2px 20px rgba(0,0,0,.164);
+      }
+      &.to-fade-in {
+        background: rgba($_color-primary, 0.2);
+        color: $_color-primary;
+        &:hover, &:focus {
+          background: $_color-primary;
+          color: get-contrast-text($_color-primary);
+        }
+        &.outlined {
+          background: none;
+          border-color: rgba($_color-primary, 0.4);
+          color: rgba($_color-primary, 0.75);
+          &:hover, &:focus {
+            border-color: $_color-primary;
+            color: $_color-primary;
+          }
+        }
+      }
+      &.to-outlined {
+        border: solid 1px $_color-primary;
         &:hover, &:focus {
           background: transparent;
           color: $_color-primary;
         }
       }
+      &.tiny {
+        border-width: 2px;
+      }
+
+      @each $class, $color in $_button-color-variations {
+        &.#{$class} {
+          background: $color;
+          @if get-contrast-text($color) != get-contrast-text($_color-primary) {
+            color: get-contrast-text($color);
+          }
+
+          &:hover, &:focus {
+            background: darken($color, 10%);
+            color: get-contrast-text(darken($color, 10));
+          }
+
+          &.outlined {
+            color: $color;
+            border-color: $color;
+            background: none;
+            &:hover, &:focus {
+              background: $color;
+              color: get-contrast-text($color);
+            }
+          }
+          &.to-fade-in {
+            background: rgba($color, 0.3);
+            color: $color;
+            &:hover, &:focus {
+              color: get-contrast-text($color);
+              background: $color;
+            }
+
+            &.outlined {
+              border-color: rgba($color, 0.4);
+              color: rgba($color, 0.75);
+              background: none;
+              &:hover, &:focus {
+                border-color: $color;
+                color: $color;
+              }
+            }
+          }
+          &.to-outlined {
+            border: solid 1px $color;
+            &:hover, &:focus {
+              color: $color;
+              background: transparent;
+            }
+          }
+
+        }
+      }
+
+      @each $class, $padding in $_button-size-variations {
+        &.#{$class} {
+          padding: $padding;
+        }
+      }
+
+
+    }
+    #{$text} {
+      margin-right: 10px;
+      transition: inherit;
+    }
+    #{$icon} {
+      transition: inherit;
+      ~ #{$text} {
+        margin-right: 0;
+        margin-left: 8px;
+      }
 
     }
 
+    // .icon-on-hover
+    // .to-replace
+    #{$this} {
+
+      &.icon-on-hover {
+        #{$text} {
+          transform: translateX(18px);
+          ~ #{$icon} {
+            text-align: right;
+          }
+        }
+        #{$icon} {
+          opacity: 0;
+          width: 28px;
+          text-align: left;
+          ~ #{$text} {
+            transform: translateX(-18px);
+          }
+        }
+        &:hover, &:focus {
+          #{$icon} {
+            opacity: 1;
+          }
+          #{$text} {
+            transform: none;
+          }
+        }
+      }
+      &.to-replace {
+        #{$text} {
+          margin: 0;
+        }
+        #{$icon} {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: auto;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+        }
+
+        &:hover {
+          #{$text} {
+            opacity: 0;
+          }
+          #{$icon} {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 
 }

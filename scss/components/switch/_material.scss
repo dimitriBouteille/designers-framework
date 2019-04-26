@@ -25,7 +25,7 @@
       background: rgba(0,0,0,0.38);
       display: block;
       border-radius: inherit;
-      @include p(transition, all 0.3s ease);
+      @include p(transition, $_default-transition);
       cursor: pointer;
 
       // Thumb

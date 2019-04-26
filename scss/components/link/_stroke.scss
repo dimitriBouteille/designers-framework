@@ -1,5 +1,4 @@
-// Stroke link
-// Compatible lors du :hover & :focus
+// Line button
 //
 // <a href="#" class="stroke-link">Hello world</a>
 .stroke-link {
@@ -35,6 +34,20 @@
       height: 100%;
       transform: none;
       transition: top $transition $transition-timing, transform $transition $transition-timing, height $transition $transition-timing $transition;
+    }
+  }
+
+
+  @each $class, $color in $_link-color-variations {
+    &.#{$class} {
+      color: $color;
+      &:after {
+        background: $color;
+      }
+
+      &:hover, &:focus {
+        color: get-contrast-text($color);
+      }
     }
   }
 

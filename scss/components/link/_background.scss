@@ -1,6 +1,6 @@
-// Background link
-//
-// <a href="#" class="background-link">Hover me</a>
+/// Background link
+///
+/// <a href="#" class="background-link">Hover me</a>
 .background-link {
 
   background: linear-gradient($_color-primary) no-repeat 0 100%;
@@ -11,6 +11,19 @@
   &:hover, &:focus {
     background-size: 100% 100%;
     color: get-contrast-text($_color-primary)
+  }
+
+  @each $class, $color in $_link-color-variations {
+
+    &.#{$class} {
+      background-image: linear-gradient($color);
+
+      @if get-contrast-text($color) != get-contrast-text($_color-primary) {
+        &:hover, &:focus {
+          color: get-contrast-text($color);
+        }
+      }
+    }
   }
 
 }

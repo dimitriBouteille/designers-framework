@@ -9,7 +9,14 @@
 
     #{$this} {
 
-      @include base-button(true, false, false);
+      border: solid 1px $_color-primary;
+      padding: 12px 23px;
+      @include p(transition, $_default-transition);
+      color: $_color-primary;
+      position: relative;
+      @include p(display, inline-flex);
+      @include p(align-items, center);
+      cursor: pointer;
       overflow: hidden;
 
       &:after {
@@ -20,10 +27,12 @@
         bottom: 0;
         width: 0;
         transition: inherit;
-        background-color: $_color-primary;
+        background: $_color-primary;
         z-index: -1;
       }
-
+      &.rounded {
+        border-radius: 30px;
+      }
       &.reversed {
         &:after {
           right: 0;
@@ -37,7 +46,6 @@
           }
         }
       }
-
       &.to-left {
         &:after {
           right: 0;
@@ -57,7 +65,6 @@
           }
         }
       }
-
       &.to-bottom {
         &:after {
           width: 100%;
@@ -84,7 +91,6 @@
           }
         }
       }
-
       &.to-top {
         &:after {
           top: auto;
@@ -111,11 +117,26 @@
           }
         }
       }
-
       &:hover, &:focus {
         color: $_color-white;
         &:after {
           width: 100%;
+        }
+      }
+      &.tiny {
+        border-width: 2px;
+      }
+
+      @each $class, $color in $_button-color-variations {
+        &.#{$class}{
+          border-color: $color;
+          color: $color;
+          &:after {
+            background: $color;
+          }
+          &:hover, &:focus {
+            color: get-contrast-text($color);
+          }
         }
       }
 

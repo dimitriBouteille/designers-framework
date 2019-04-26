@@ -20,7 +20,7 @@
 
     #{$this} {
       position: absolute;
-      background: rgba(8,8,8,0.8);
+      background: $_tooltip-background-color;
       bottom: 100%;
       white-space: nowrap;
       color: $_color-white;

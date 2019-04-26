@@ -1,16 +1,16 @@
 // Checkbox material
 //
-// <label class="material-checkbox">
-//            <input class="material-checkbox-input" type="checkbox">
-//            <span class="material-checkbox-check"></span>
-//            <span class="material-checkbox-label">Option 1</span>
+// <label class="mat-checkbox">
+//            <input class="mat-checkbox-input" type="checkbox">
+//            <span class="mat-checkbox-check"></span>
+//            <span class="mat-checkbox-label">Option 1</span>
 //        </label>
-// <label class="material-checkbox">
-//            <input class="material-checkbox-input" type="checkbox">
-//            <span class="material-checkbox-label">Option 1</span>
-//            <span class="material-checkbox-check"></span>
+// <label class="mat-checkbox">
+//            <input class="mat-checkbox-input" type="checkbox">
+//            <span class="mat-checkbox-label">Option 1</span>
+//            <span class="mat-checkbox-check"></span>
 //        </label>
-.material-checkbox {
+.mat-checkbox {
 
   $this: &;
   $input: #{$this}-input;
@@ -63,11 +63,11 @@
     }
 
     #{$check} {
-      @include p(transition, all 0.3s ease);
+      @include p(transition, $_default-transition);
       position: relative;
       flex: none;
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       border: solid 2px #b6b6b6;
       border-radius: 3px;
       &:before{

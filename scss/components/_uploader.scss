@@ -21,7 +21,7 @@
       @include p(align-items, center);
       @include p(flex-direction, column);
       padding: 3rem;
-      transition: all 0.3s ease;
+      @include p(transition, $_default-transition);
     }
 
     #{$input} {

@@ -40,6 +40,14 @@
           }
         }
       }
+
+      &.square {
+        #{$toogle} {
+          &, &:before {
+            border-radius: 0;
+          }
+        }
+      }
     }
     #{$toogle} {
 
@@ -50,7 +58,7 @@
       border-radius: 13px;
       border: solid 1px rgb(210,210,210);
       box-sizing: content-box;
-      @include p(transition, all 0.3s ease);
+      @include p(transition, $_default-transition);
       &:before {
         background: rgb(215,215,215);
         width: 16px;

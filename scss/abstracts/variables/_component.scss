@@ -1,7 +1,19 @@
 
+// Default transition for all components
+$_default-transition : all 0.3s ease !default;
+
+// Z-index property for toast component
+$_zindex-toast :      1010 !default;
+
+// Z-index property for fab-button component
+$_zindex-fab-button : 1020 !default;
+
+// Background color for tooltip component
+$_tooltip-background-color :    rgb(10,10,10) !default;
+
 // Toast variations color
 // default color is $_color-black
-$_toast-variations : (
+$_toast-color-variations : (
         error: $_color-error,
         success: $_color-success,
         info: $_color-info,
@@ -10,11 +22,68 @@ $_toast-variations : (
 
 // Badge variations color
 // default color is $_color-primary
-$_badge-variations : (
+$_badge-color-variations : (
         secondary : $_color-secondary,
         error: $_color-error,
         success: $_color-success,
         info: $_color-info,
         warning: $_color-warning,
         black: $_color-black,
+) !default;
+
+// Link variations color
+// default color is $_color-primary
+$_link-color-variations : (
+        secondary: $_color-secondary,
+        black: $_color-black,
+        white: $_color-white,
+) !default;
+
+// Marker variations color
+// default is color $_color-primary
+$_marker-color-variations : (
+        secondary: $_color-secondary,
+) !default;
+
+// Avatar size variations
+// default width is 45px
+$_avatar-size-variations : (
+        medium : 38px,
+        small: 30px,
+) !default;
+
+// Button variations color
+// default color is $_color-primary
+$_button-color-variations : (
+        secondary: $_color-secondary,
+        black: $_color-black,
+        white: $_color-white,
+        success: $_color-success,
+) !default;
+
+// Button size variations (with padding)
+// default padding is [12px 23px]
+$_button-size-variations : (
+        medium : 8px 16px,
+        small: 3px 12px,
+) !default;
+
+// Fab button size variations (width-height)
+// default size is 55px
+$_fab-button-size-variations : (
+        medium: 45px,
+        small: 35px,
+) !default;
+
+// Progress bar height variations
+// default height is 22px
+$_progress-size-variations : (
+        small: 10px,
+        tiny: 5px,
+) !default;
+
+// Progress bar variations color
+// default color is $_color-primary
+$_progress-color-variations : (
+        secondary: $_color-secondary,
 ) !default;

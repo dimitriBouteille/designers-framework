@@ -99,11 +99,48 @@
           }
         }
       }
-
       &.circle {
         #{$icon} {
           &, img {
             border-radius: 8px;
+          }
+        }
+      }
+
+      @each $class, $color in $_marker-color-variations {
+        &.#{$class} {
+          #{$icon} {
+            background: $color;
+
+            @if get-contrast-text($color) != get-contrast-text($_color-primary) {
+              color: get-contrast-text($color);
+            }
+
+            &:after {
+              border-color: $color transparent transparent transparent;
+            }
+          }
+
+          &.right {
+            #{$icon} {
+              &:after {
+                border-color: transparent transparent transparent $color;
+              }
+            }
+          }
+          &.left {
+            #{$icon} {
+              &:after {
+                border-color: transparent $color transparent transparent;
+              }
+            }
+          }
+          &.top {
+            #{$icon} {
+              &:after {
+                border-color: transparent transparent $color transparent;
+              }
+            }
           }
         }
       }

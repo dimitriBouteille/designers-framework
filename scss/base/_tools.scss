@@ -182,7 +182,7 @@
 }
 
 // Border-radius: 50%
-.circle {
+.rounded {
   @include p(border-radius, 50%);
 }
 

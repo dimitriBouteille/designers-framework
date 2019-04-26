@@ -108,7 +108,7 @@
       height: 36px;
       background: lighten(#000, 94%);
       border-radius: 18px;
-      transition: all 0.2s ease;
+      @include p(transition, $_default-transition);
       &:hover {
         background: lighten(#000, 88%)
       }

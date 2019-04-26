@@ -17,16 +17,13 @@
   @at-root {
 
     #{$this} {
-      background : rgb(235,235,235);
+      background : rgb(240,240,240);
       height: 32px;
       @include p(align-items, center);
       @include p(display, inline-flex);
-      @include p(transition, all 0.3s ease);
+      @include p(transition, $_default-transition);
       position: relative;
-
-      &.rounded {
-        border-radius: 32px;
-      }
+      border-radius: 32px;
 
       &.has-hover {
         cursor: pointer;
@@ -36,7 +33,7 @@
       }
     }
     #{$text} {
-      padding: 0 12px;
+      padding: 0 16px;
     }
     #{$label} {
       height: inherit;
@@ -52,7 +49,7 @@
       @include p(display, flex);
       @include p(align-items, center);
       margin-right: 6px;
-      transition: all 0.3s ease;
+      @include p(transition, $_default-transition);
       cursor: pointer;
       font-size: 18px;
       i {

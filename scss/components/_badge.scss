@@ -5,8 +5,8 @@
 
   min-width: 22px;
   height: 22px;
-  display: inline-flex;
-  align-items: center;
+  @include p(display, inline-flex);
+  @include p(align-items, center);
   background: $_color-primary;
   color: get-contrast-text($_color-primary);
   padding: 0 9px;
@@ -15,7 +15,7 @@
 
   &.outlined {
     border: solid 1px $_color-primary;
-    background: none;
+    background: none !important;
     color: $_color-primary;
   }
 
@@ -35,12 +35,13 @@
     padding: 0 12px;
   }
 
-
-  @each $class, $color in $_badge-variations {
+  @each $class, $color in $_badge-color-variations {
 
     &.#{$class} {
       background: $color;
-      color: get-contrast-text($color);
+      @if get-contrast-text($color) != get-contrast-text($_color-primary) {
+        color: get-contrast-text($color);
+      }
       &.outlined {
         border-color : $color;
         color: $color;

@@ -45,8 +45,8 @@
 
     #{$this} {
       @include p(display, flex);
-      flex-direction: row-reverse;
-      justify-content: flex-end;
+      @include p(flex-direction, row-reverse);
+      @include p(justify-content, flex-end);
 
       &.to-scale-up {
         #{$icon} {
@@ -60,7 +60,7 @@
     }
     #{$icon} {
       cursor: pointer;
-      @include p(transition, all 0.3s ease);
+      @include p(transition, $_default-transition);
       color: rgb(200,200,200);
       ~ #{$icon} {
         padding-right: 6px;

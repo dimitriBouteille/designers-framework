@@ -117,6 +117,56 @@
         }
       }
 
+      @each $class, $color in $_marker-color-variations {
+        &.#{$class} {
+          #{$pulse} {
+            background: $color;
+            &:after {
+              background: transparentize($color, 0.6);
+            }
+          }
+          #{$label} {
+            background: $color;
+
+            @if get-contrast-text($color) !=  get-contrast-text($_color-primary) {
+              color: get-contrast-text($color);
+            }
+            &:before {
+              border-color: transparent $color transparent transparent;
+            }
+          }
+
+          &.right {
+            #{$label} {
+              &:before {
+                border-color: $color transparent transparent transparent;
+              }
+            }
+          }
+          &.center {
+            #{$label} {
+              &:before {
+                border-color: $color transparent transparent transparent;
+              }
+            }
+          }
+          &.bottom {
+            #{$label} {
+              &:before {
+                border-color: transparent transparent $color transparent;
+              }
+            }
+            &.right {
+              #{$label} {
+                &:before {
+                  border-color: transparent transparent transparent $color;
+                }
+              }
+            }
+          }
+        }
+      }
+
     }
 
     #{$pulse} {
@@ -141,7 +191,6 @@
         animation: pulseAnimation 1.2s infinite;
       }
     }
-
     #{$label} {
       position: absolute;
       background: $_color-primary;
