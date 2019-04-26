@@ -1,0 +1,82 @@
+// Dot
+//
+// <ul class="dots">
+//      li class="dot"></li>
+//      <li class="dot is-active"></li>
+//      ...
+//    </ul>
+// <ul class="dots vertical">
+//      li class="dot"></li>
+//      <li class="dot is-active"></li>
+//      ...
+//    </ul>
+.dot {
+
+  $this: &;
+  $list: #{$this}s;
+
+  @at-root {
+
+    #{$list} {
+      @include p(display, flex);
+
+      &.align-vertical {
+        #{$this} {
+          ~ #{$this} {
+            margin: 10px 0 0 0;
+          }
+        }
+      }
+      &.to-fade-out {
+        #{$this} {
+          box-shadow: inset 0 0 0 10px;
+          opacity: 0.5;
+          &:hover {
+            opacity: 0.8;
+          }
+          &.is-active {
+            opacity: 1;
+          }
+        }
+      }
+      &.to-stroke {
+        #{$this} {
+          box-shadow: inset 0 0 0 10px;
+          &:hover {
+            opacity: 1;
+          }
+          &.is-active {
+            box-shadow: inset 0 0 0 2px;
+          }
+        }
+      }
+
+      @each $class, $color in $_dot-color-variations {
+        &.#{$class} {
+          #{$this} {
+            color: $color;
+          }
+        }
+
+      }
+    }
+    #{$this} {
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1.5px;
+      color: $_color-primary;
+      transition: all 0.2s ease;
+
+      ~ #{$this} {
+        margin-left: 10px;
+      }
+
+      &.is-active{
+        box-shadow: inset 0 0 0 10px;
+      }
+    }
+
+  }
+}

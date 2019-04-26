@@ -87,3 +87,11 @@ $_progress-size-variations : (
 $_progress-color-variations : (
         secondary: $_color-secondary,
 ) !default;
+
+// Dot color variations
+// default color is $_color-primary
+$_dot-color-variations : (
+        secondary: $_color-secondary,
+        white : $_color-white,
+        black : $_color-black,
+) !default;
