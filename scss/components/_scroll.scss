@@ -1,0 +1,60 @@
+// Scrollbar
+//
+//  <div class="scroll">
+//    ...
+//  </div>
+.scroll {
+
+  $this: &;
+
+
+  @at-root {
+
+    #{$this} {
+
+      overflow-x: auto;
+
+      &::-webkit-scrollbar-track
+      {
+        border-radius: 0;
+        background-color: $_scrollbar-background;
+      }
+      &::-webkit-scrollbar
+      {
+        width: $_scrollbar-width;
+        background-color: $_scrollbar-background;
+      }
+      &::-webkit-scrollbar-thumb
+      {
+        border-radius: 0;
+        background-color: $_scrollbar-thumb-background;
+
+        @if $_scrollbar-thumb-background != $_color-primary {
+          &:hover {
+            background-color: $_color-primary;
+          }
+        }
+      }
+
+      &.rounded-scroll {
+        &::-webkit-scrollbar, &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-track
+        {
+          border-radius: $_scrollbar-width / 2;
+        }
+      }
+    }
+    textarea#{$this} {
+      &::-webkit-scrollbar {
+        width: $_scrollbar-textarea-width;
+      }
+
+      &.rounded-scroll {
+        &::-webkit-scrollbar, &::-webkit-scrollbar-thumb, &::-webkit-scrollbar-track
+        {
+          border-radius: $_scrollbar-textarea-width / 2;
+        }
+      }
+    }
+  }
+
+}

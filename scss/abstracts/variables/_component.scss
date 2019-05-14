@@ -105,3 +105,15 @@ $_modal-size-variations : (
         large : 1100px,
         small: 350px,
 ) !default;
+
+// Scrollbar background-color
+$_scrollbar-background :        $_body-background-color !default;
+
+// Scrollbar thumb background-color
+$_scrollbar-thumb-background :  $_color-black !default;
+
+// Scrollbar width
+$_scrollbar-width:              10px !default;
+
+// Scrollbar width for textarea
+$_scrollbar-textarea-width:     4px !default;
