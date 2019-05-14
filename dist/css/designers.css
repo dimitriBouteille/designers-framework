@@ -3175,6 +3175,13 @@ h6, .title-h6 {
   display: none;
 }
 
+.img-cover {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .button, .fab-button, .swipe-button, .tag, .tag-action, .follow-link, .rating-icon, .mat-checkbox-check, .switch-toggle, .material-switch-toggle, .material-switch-input, .uploader, .mat-radio-check, .chip-label, .mat-tab-item, .toast-close, .breadcrumb-link, .material-input-line:after, .material-input-label {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
