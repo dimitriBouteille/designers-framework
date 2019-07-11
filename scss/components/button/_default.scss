@@ -45,7 +45,7 @@
       }
       &.shadow {
         border: none;
-        box-shadow: 0 2px 20px rgba(0,0,0,.164);
+        box-shadow: 0 20px 40px -12px rgba($_color-primary, .35);
       }
       &.to-fade-in {
         background: rgba($_color-primary, 0.2);
@@ -120,6 +120,9 @@
               color: $color;
               background: transparent;
             }
+          }
+          &.shadow {
+            box-shadow: 0 20px 40px -12px rgba($color, .35);
           }
 
         }

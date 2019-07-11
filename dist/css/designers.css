@@ -43,7 +43,7 @@ body {
   background-color: #FFFFFF;
   font-size: 1em;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family: "Muli", sans-serif;
   color: #323232;
   line-height: 1.45;
 }
@@ -185,7 +185,6 @@ h4,
 h5,
 h6,
 [class*="title-"] {
-  font-family: "Neuton", serif;
   font-weight: 600;
 }
 
@@ -222,8 +221,8 @@ textarea {
 
 .button.shadow {
   border: none;
-  -webkit-box-shadow: 0 2px 20px rgba(0, 0, 0, 0.164);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.164);
+  -webkit-box-shadow: 0 20px 40px -12px rgba(45, 128, 243, 0.35);
+  box-shadow: 0 20px 40px -12px rgba(45, 128, 243, 0.35);
 }
 
 .button.to-fade-in {
@@ -261,53 +260,59 @@ textarea {
 }
 
 .button.secondary {
-  background: #EC407A;
+  background: #f6fafe;
+  color: #323232;
 }
 
 .button.secondary:hover, .button.secondary:focus {
-  background: #e2175b;
-  color: #FFFFFF;
+  background: #c8e1f9;
+  color: #323232;
 }
 
 .button.secondary.outlined {
-  color: #EC407A;
-  border-color: #EC407A;
+  color: #f6fafe;
+  border-color: #f6fafe;
   background: none;
 }
 
 .button.secondary.outlined:hover, .button.secondary.outlined:focus {
-  background: #EC407A;
-  color: #FFFFFF;
+  background: #f6fafe;
+  color: #323232;
 }
 
 .button.secondary.to-fade-in {
-  background: rgba(236, 64, 122, 0.3);
-  color: #EC407A;
+  background: rgba(246, 250, 254, 0.3);
+  color: #f6fafe;
 }
 
 .button.secondary.to-fade-in:hover, .button.secondary.to-fade-in:focus {
-  color: #FFFFFF;
-  background: #EC407A;
+  color: #323232;
+  background: #f6fafe;
 }
 
 .button.secondary.to-fade-in.outlined {
-  border-color: rgba(236, 64, 122, 0.4);
-  color: rgba(236, 64, 122, 0.75);
+  border-color: rgba(246, 250, 254, 0.4);
+  color: rgba(246, 250, 254, 0.75);
   background: none;
 }
 
 .button.secondary.to-fade-in.outlined:hover, .button.secondary.to-fade-in.outlined:focus {
-  border-color: #EC407A;
-  color: #EC407A;
+  border-color: #f6fafe;
+  color: #f6fafe;
 }
 
 .button.secondary.to-outlined {
-  border: solid 1px #EC407A;
+  border: solid 1px #f6fafe;
 }
 
 .button.secondary.to-outlined:hover, .button.secondary.to-outlined:focus {
-  color: #EC407A;
+  color: #f6fafe;
   background: transparent;
+}
+
+.button.secondary.shadow {
+  -webkit-box-shadow: 0 20px 40px -12px rgba(246, 250, 254, 0.35);
+  box-shadow: 0 20px 40px -12px rgba(246, 250, 254, 0.35);
 }
 
 .button.black {
@@ -358,6 +363,11 @@ textarea {
 .button.black.to-outlined:hover, .button.black.to-outlined:focus {
   color: #323232;
   background: transparent;
+}
+
+.button.black.shadow {
+  -webkit-box-shadow: 0 20px 40px -12px rgba(50, 50, 50, 0.35);
+  box-shadow: 0 20px 40px -12px rgba(50, 50, 50, 0.35);
 }
 
 .button.white {
@@ -411,6 +421,11 @@ textarea {
   background: transparent;
 }
 
+.button.white.shadow {
+  -webkit-box-shadow: 0 20px 40px -12px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 20px 40px -12px rgba(255, 255, 255, 0.35);
+}
+
 .button.success {
   background: #22ce8b;
   color: #323232;
@@ -460,6 +475,11 @@ textarea {
 .button.success.to-outlined:hover, .button.success.to-outlined:focus {
   color: #22ce8b;
   background: transparent;
+}
+
+.button.success.shadow {
+  -webkit-box-shadow: 0 20px 40px -12px rgba(34, 206, 139, 0.35);
+  box-shadow: 0 20px 40px -12px rgba(34, 206, 139, 0.35);
 }
 
 .button.medium {
@@ -670,16 +690,16 @@ textarea {
 }
 
 .swipe-button.secondary {
-  border-color: #EC407A;
-  color: #EC407A;
+  border-color: #f6fafe;
+  color: #f6fafe;
 }
 
 .swipe-button.secondary:after {
-  background: #EC407A;
+  background: #f6fafe;
 }
 
 .swipe-button.secondary:hover, .swipe-button.secondary:focus {
-  color: #FFFFFF;
+  color: #323232;
 }
 
 .swipe-button.black {
@@ -862,8 +882,12 @@ textarea {
 }
 
 .background-link.secondary {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#EC407A));
-  background-image: linear-gradient(#EC407A);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f6fafe));
+  background-image: linear-gradient(#f6fafe);
+}
+
+.background-link.secondary:hover, .background-link.secondary:focus {
+  color: #323232;
 }
 
 .background-link.black {
@@ -910,11 +934,11 @@ textarea {
 }
 
 .follow-link.secondary:after {
-  background: #EC407A;
+  background: #f6fafe;
 }
 
 .follow-link.secondary:hover, .follow-link.secondary:focus {
-  color: #EC407A;
+  color: #f6fafe;
 }
 
 .follow-link.black:after {
@@ -976,15 +1000,15 @@ textarea {
 }
 
 .stroke-link.secondary {
-  color: #EC407A;
+  color: #f6fafe;
 }
 
 .stroke-link.secondary:after {
-  background: #EC407A;
+  background: #f6fafe;
 }
 
 .stroke-link.secondary:hover, .stroke-link.secondary:focus {
-  color: #FFFFFF;
+  color: #323232;
 }
 
 .stroke-link.black {
@@ -1034,9 +1058,9 @@ textarea {
 }
 
 .underline-link.secondary {
-  color: #EC407A;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#EC407A));
-  background-image: linear-gradient(#EC407A);
+  color: #f6fafe;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f6fafe));
+  background-image: linear-gradient(#f6fafe);
 }
 
 .underline-link.black {
@@ -1448,6 +1472,71 @@ textarea {
   flex: 1;
 }
 
+.mat-radio:hover .mat-radio-check, .mat-radio:focus .mat-radio-check {
+  border-color: #2d80f3;
+}
+
+.mat-radio-input {
+  display: none;
+}
+
+.mat-radio-input:checked ~ .mat-radio-check {
+  border-color: #2d80f3;
+}
+
+.mat-radio-input:checked ~ .mat-radio-check:before {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.mat-radio-input:disabled ~ .mat-radio-check {
+  border-color: #b0b0b0;
+}
+
+.mat-radio-input:disabled:checked ~ .mat-radio-check, .mat-radio-input:disabled:checked ~ .mat-radio-label {
+  cursor: default;
+}
+
+.mat-radio-input:disabled:checked ~ .mat-radio-check:before {
+  background: #b0b0b0;
+}
+
+.mat-radio-input + .mat-radio-label {
+  padding-right: 15px;
+}
+
+.mat-radio-check {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: solid 2px #b6b6b6;
+}
+
+.mat-radio-check:before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: inherit;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
+  background: #2d80f3;
+  position: absolute;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.mat-radio-check + .mat-radio-label {
+  padding-left: 15px;
+}
+
+.mat-radio-label {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 .marker {
   position: absolute;
 }
@@ -1536,35 +1625,36 @@ textarea {
 }
 
 .marker.secondary .marker-pulse {
-  background: #EC407A;
+  background: #f6fafe;
 }
 
 .marker.secondary .marker-pulse:after {
-  background: rgba(236, 64, 122, 0.4);
+  background: rgba(246, 250, 254, 0.4);
 }
 
 .marker.secondary .marker-label {
-  background: #EC407A;
+  background: #f6fafe;
+  color: #323232;
 }
 
 .marker.secondary .marker-label:before {
-  border-color: transparent #EC407A transparent transparent;
+  border-color: transparent #f6fafe transparent transparent;
 }
 
 .marker.secondary.right .marker-label:before {
-  border-color: #EC407A transparent transparent transparent;
+  border-color: #f6fafe transparent transparent transparent;
 }
 
 .marker.secondary.center .marker-label:before {
-  border-color: #EC407A transparent transparent transparent;
+  border-color: #f6fafe transparent transparent transparent;
 }
 
 .marker.secondary.bottom .marker-label:before {
-  border-color: transparent transparent #EC407A transparent;
+  border-color: transparent transparent #f6fafe transparent;
 }
 
 .marker.secondary.bottom.right .marker-label:before {
-  border-color: transparent transparent transparent #EC407A;
+  border-color: transparent transparent transparent #f6fafe;
 }
 
 .marker-pulse {
@@ -1747,23 +1837,24 @@ textarea {
 }
 
 .map-marker.secondary .map-marker-icon {
-  background: #EC407A;
+  background: #f6fafe;
+  color: #323232;
 }
 
 .map-marker.secondary .map-marker-icon:after {
-  border-color: #EC407A transparent transparent transparent;
+  border-color: #f6fafe transparent transparent transparent;
 }
 
 .map-marker.secondary.right .map-marker-icon:after {
-  border-color: transparent transparent transparent #EC407A;
+  border-color: transparent transparent transparent #f6fafe;
 }
 
 .map-marker.secondary.left .map-marker-icon:after {
-  border-color: transparent #EC407A transparent transparent;
+  border-color: transparent #f6fafe transparent transparent;
 }
 
 .map-marker.secondary.top .map-marker-icon:after {
-  border-color: transparent transparent #EC407A transparent;
+  border-color: transparent transparent #f6fafe transparent;
 }
 
 .map-marker-icon {
@@ -1881,6 +1972,37 @@ textarea {
   margin-left: -36px;
   -webkit-transition: inherit;
   transition: inherit;
+}
+
+.tab-item {
+  position: relative;
+  color: #969696;
+  cursor: pointer;
+  padding-bottom: 4px;
+}
+
+.tab-item:after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  -webkit-transition: inherit;
+  transition: inherit;
+  bottom: 0;
+}
+
+.tab-item ~ .tab-item {
+  margin-left: 20px;
+}
+
+.tab-item.is-active {
+  color: #323232;
+}
+
+.tab-item.is-active:after {
+  background: #2d80f3;
 }
 
 .mat-tab {
@@ -2014,17 +2136,18 @@ textarea {
 }
 
 .badge.secondary {
-  background: #EC407A;
+  background: #f6fafe;
+  color: #323232;
 }
 
 .badge.secondary.outlined {
-  border-color: #EC407A;
-  color: #EC407A;
+  border-color: #f6fafe;
+  color: #f6fafe;
 }
 
 .badge.secondary.light {
-  background: #fce2eb;
-  color: #EC407A;
+  background: white;
+  color: #f6fafe;
 }
 
 .badge.error {
@@ -2471,8 +2594,8 @@ textarea {
 }
 
 .progress.secondary .progress-bar {
-  background: #EC407A;
-  color: #FFFFFF;
+  background: #f6fafe;
+  color: #323232;
 }
 
 .progress.border {
@@ -2563,7 +2686,7 @@ textarea {
 }
 
 .dots.secondary .dot {
-  color: #EC407A;
+  color: #f6fafe;
 }
 
 .dots.white .dot {
@@ -3020,7 +3143,7 @@ h6, .title-h6 {
 }
 
 .t-secondary {
-  color: #EC407A;
+  color: #f6fafe;
 }
 
 .t-black {
@@ -3081,7 +3204,7 @@ h6, .title-h6 {
 }
 
 .bg-secondary {
-  background-color: #EC407A;
+  background-color: #f6fafe;
 }
 
 .bg-black {
@@ -3117,7 +3240,7 @@ h6, .title-h6 {
 }
 
 .fill-secondary {
-  fill: #EC407A;
+  fill: #f6fafe;
 }
 
 .fill-black {
@@ -3182,7 +3305,7 @@ h6, .title-h6 {
   object-fit: cover;
 }
 
-.button, .fab-button, .swipe-button, .tag, .tag-action, .follow-link, .rating-icon, .mat-checkbox-check, .switch-toggle, .material-switch-toggle, .material-switch-input, .uploader, .mat-radio-check, .chip-label, .mat-tab-item, .toast-close, .breadcrumb-link, .material-input-line:after, .material-input-label {
+.button, .fab-button, .swipe-button, .tag, .tag-action, .follow-link, .rating-icon, .mat-checkbox-check, .switch-toggle, .material-switch-toggle, .material-switch-input, .uploader, .mat-radio-check, .mat-radio-check, .chip-label, .tab-item, .mat-tab-item, .toast-close, .breadcrumb-link, .material-input-line:after, .material-input-label {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -3193,7 +3316,7 @@ h6, .title-h6 {
   display: inline-flex;
 }
 
-.fab-button, .tag-label, .tag-action, .tags, .avatars, .rating, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chips, .mat-tab, .mat-tab-item, .toast-header, .toast-body, .toast-close, .toasts, .breadcrumb, .progress, .progress.tooltip-on-hover .progress-bar:hover .progress-tooltip, .progress-bar, .progress-tooltip, .dots, .pagination, .pagination-item.is-current, .comment, .comment-header, .modal, .modal-dialog, .d-flex {
+.fab-button, .tag-label, .tag-action, .tags, .avatars, .rating, .mat-checkbox, .uploader, .mat-radio, .mat-radio, .map-marker-icon, .chips, .tab, .mat-tab, .mat-tab-item, .toast-header, .toast-body, .toast-close, .toasts, .breadcrumb, .progress, .progress.tooltip-on-hover .progress-bar:hover .progress-tooltip, .progress-bar, .progress-tooltip, .dots, .pagination, .pagination-item.is-current, .comment, .comment-header, .modal, .modal-dialog, .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3207,7 +3330,7 @@ h6, .title-h6 {
   display: inline-grid;
 }
 
-.button, .fab-button, .swipe-button, .tag, .tag-action, .avatar, .mat-checkbox, .uploader, .mat-radio, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .badge, .toast-header, .toast-body, .progress, .progress-bar, .progress-tooltip, .pagination, .pagination-item.is-current, .modal, .align-center, .align-full {
+.button, .fab-button, .swipe-button, .tag, .tag-action, .avatar, .mat-checkbox, .uploader, .mat-radio, .mat-radio, .map-marker-icon, .chip-label, .chip-check, .mat-tab-item, .badge, .toast-header, .toast-body, .progress, .progress-bar, .progress-tooltip, .pagination, .pagination-item.is-current, .modal, .align-center, .align-full {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -3291,8 +3414,8 @@ h6, .title-h6 {
 .align-vertical-reverse {
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
-  -ms-flex-direction: columns-reverse;
-  flex-direction: columns-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .align-horizontal {
@@ -3302,6 +3425,6 @@ h6, .title-h6 {
   flex-direction: row;
 }
 
-.mat-radio-check {
+.mat-radio-check, .mat-radio-check {
   position: relative;
 }

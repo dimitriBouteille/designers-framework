@@ -209,7 +209,7 @@
   &-vertical {
     @include p(flex-direction, column);
     &-reverse {
-      @include p(flex-direction, columns-reverse);
+      @include p(flex-direction, column-reverse);
     }
   }
   &-horizontal {

@@ -1,0 +1,53 @@
+// Default tab
+//
+// <ul class="tab">
+//    <li class="tab-item">
+//        Today
+//    </li>
+//    <li class="tab-item is-active">
+//        This Week
+//    </li>
+//    ...
+//</ul>
+.tab {
+
+  $this: &;
+  $item: #{$this}-item;
+
+  @at-root {
+
+    #{$this} {
+      @include p(display, flex);
+    }
+
+    #{$item} {
+      position: relative;
+      color : $_color-grey;
+      cursor: pointer;
+      padding-bottom: 4px;
+      @include p(transition, $_default-transition);
+
+      &:after {
+        content:"";
+        position: absolute;
+        left: calc(50% - 2px);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        transition: inherit;
+        bottom: 0;
+      }
+      ~ #{$item} {
+        margin-left: 20px;
+      }
+
+      &.is-active {
+        color: $_ft-text-color;
+
+        &:after {
+          background: $_color-primary;
+        }
+      }
+    }
+  }
+}
