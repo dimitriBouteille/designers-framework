@@ -1,4 +1,5 @@
 // Title h1 > h6
+// =========================
 @each $tag, $size in $_titles {
 
   #{$tag}, .title-#{$tag}{
@@ -6,7 +7,8 @@
   }
 }
 
-///Bloc margin align (left, center, ...)
+// Bloc margin align (left, center, ...)
+// =========================
 .b {
   &-right {
     margin-left: auto;
@@ -26,11 +28,12 @@
   }
 }
 
-/// Text transform
+// Text transform
 // Text ellipis
 // Font style
 // Text decoration
 // Text color
+// =========================
 .t {
   &-left {
     text-align:left;
@@ -90,6 +93,7 @@
 }
 
 // Display property
+// =========================
 .d {
   &-block {
     display: block;
@@ -112,6 +116,7 @@
 }
 
 // Position property
+// =========================
 .p {
   &-relative {
     position: relative;
@@ -122,35 +127,39 @@
   &-fixed {
     position: fixed;
   }
-  &-sticky{
+  &-sticky {
     position: sticky;
   }
 }
 
 // Background-color property
+// =========================
 .bg {
   @each $class, $color in $_colors {
     &-#{$class}{
-      background-color: $color;
+      background-color: var-color($class);
     }
   }
 }
 
 // Fill property
+// =========================
 .fill {
   @each $class, $color in $_colors {
     &-#{$class}{
-      fill: $color;
+      fill: var-color($class);
     }
   }
 }
 
 // Width: 100%
+// =========================
 .full {
   width: 100%;
 }
 
 // Full-size div with position (absolute, fixed, ...)
+// =========================
 .full-size {
   left: 0;
   right: 0;
@@ -159,6 +168,7 @@
 }
 
 /// Center horizontal and vertical align with div
+// =========================
 .position-center {
   top: 50%;
   left: 50%;
@@ -166,8 +176,9 @@
 }
 
 // Selection color
+// =========================
 ::selection {
-  background: $_color-primary;
+  background: var-color('primary');
   color: get-contrast-text($_color-primary);
 }
 

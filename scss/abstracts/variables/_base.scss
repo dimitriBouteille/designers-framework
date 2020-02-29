@@ -1,17 +1,15 @@
 
-//
-// COLORS
-//
-
-$_color-primary :           #2d80f3 !default;
-$_color-secondary :         #EC407A !default;
-$_color-black :             #323232 !default;
+// Colors
+// =========================
+$_color-primary :           #e0dd3f !default;
+$_color-secondary :         #eeebdf !default;
+$_color-black :             #323e48 !default;
 $_color-white :             #FFFFFF !default;
 $_color-success :           #22ce8b !default;
 $_color-info :              #00B0FF !default;
 $_color-warning :           #FF9800 !default;
 $_color-error :             #f46363 !default;
-$_color-light :             rgb(235,235,235)  !default;
+$_color-light :             rgb(235,235,235) !default;
 $_color-grey :              #969696 !default;
 $_color-online :            #00C853 !default;
 $_color-way :               #f1c40f !default;
@@ -20,6 +18,7 @@ $_color-offline :           #e74c3c !default;
 // Color mapping
 // Key :    class name
 // Value :  color
+// =========================
 $_colors : (
         primary :   $_color-primary,
         secondary : $_color-secondary,
@@ -33,25 +32,25 @@ $_colors : (
 ) !default;
 
 
-//
-// FONTS
-//
-
-$_ft-primary :              'Roboto', sans-serif !default;
-$_ft-secondary :            'Neuton', serif !default;
+// Fonts
+// =========================
+$_ft-primary :              "Karla",sans-serif !default;
+$_ft-secondary :            "Gloria Hallelujah",cursive !default;
 $_ft-icon-material :        'Material Icons' !default;
 $_ft-base-size :            1em !default;
 
 // (p, a, input, span, label, ...)
-$_ft-text-family :          $_ft-primary !default;
-$_ft-text-color :           $_color-black !default;
+// =========================
+$_ft-text-family :          var(--ft-primary) !default;
+$_ft-text-color :           var(--black) !default;
 $_ft-text-size :            $_ft-base-size !default;
 $_ft-text-weight :          400 !default;
 $_ft-text-line-height :     1.45 !default;
 
 // (h1, h2, h3, ...)
-$_ft-title-family :         $_ft-secondary !default;
-$_ft-title-color :          $_color-black !default;
+// =========================
+$_ft-title-family :         var(--ft-primary) !default;
+$_ft-title-color :          $_ft-text-color !default;
 $_ft-title-weight :         600 !default;
 $_ft-h1-size :              $_ft-base-size * 2.4 !default;
 $_ft-h2-size :              $_ft-base-size * 2.1 !default;
@@ -63,6 +62,7 @@ $_ft-h6-size :              $_ft-base-size !default;
 // Title mapping
 // Key :    class name
 // Value :  font-size
+// =========================
 $_titles : (
         h1 : $_ft-h1-size,
         h2 : $_ft-h2-size,
@@ -72,9 +72,6 @@ $_titles : (
         h6 : $_ft-h6-size,
 ) !default;
 
-
-//
-/// CONTAINER
-//
-
+// Container
+// =========================
 $_body-background-color:          $_color-white !default;
