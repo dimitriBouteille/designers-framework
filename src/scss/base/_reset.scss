@@ -11,82 +11,31 @@ body {
   box-sizing: border-box;
 }
 
-a,
-button,
-input,
-textarea,
-fieldset,
-select{
+a, button, input, textarea, fieldset, select {
   outline: none;
   border:none;
   background:none;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-article,
-aside,
-dialog,
-div,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-input,
-textarea,
-select,
-p{
+article, aside, dialog, div, figure, footer, header, hgroup, menu, nav, section, input, textarea, select, p {
   display: block;
 }
 
-html,
-body,
-textarea,
-figure,
-label,
-button,
-input,
-textarea,
-select,
-p,
-ul,
-ol,
-li p,
-li ul,
-li ol,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-code,
-fieldset,
-a{
+html, body, textarea, figure, label, button, input, textarea, select,
+p, ul, ol, li p, li ul, li ol, p, h1, h2, h3, h4, h5, h6, span, code, fieldset, a{
   margin: 0;
   padding: 0;
 }
 
-img,
-table,
-td,
-blockquote,
-code,
-pre,
-textarea,
-input,
-video {
+img, table, td, blockquote, code, pre, textarea, input, video {
   max-width: 100%;
   max-height:100%;
 }
@@ -101,8 +50,7 @@ a img {
   border: 0;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
@@ -115,35 +63,16 @@ label {
   cursor: pointer;
 }
 
-a,
-i,
-span,
-p,
-li,
-b,
-strong,
-label,
-input,
-textarea,
-button,
-label,
-select,
-option
-{
+a, i, span, p, li, b, strong, label, input, textarea, button, label, select, option, table, caption {
   font-size:    inherit;
   font-weight:  inherit;
   font-family:  inherit;
   color:        inherit;
   line-height:  inherit;
+  font-variant: inherit;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-[class*="title-"]{
+h1, h2, h3, h4, h5, h6 {
   @if $_ft-title-color != $_ft-text-color {
     color: $_ft-title-color;
   }

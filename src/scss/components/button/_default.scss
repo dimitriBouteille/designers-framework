@@ -18,7 +18,7 @@
       @include p(transition, $_default-transition);
       @include p(display, inline-flex);
       @include p(align-items, center);
-      background: $_color-primary;
+      background: color(primary);
       color: get-contrast-text($_color-primary);
       cursor: pointer;
       padding: 12px 23px;
@@ -36,7 +36,7 @@
       }
       &.outlined {
         border: solid 1px $_color-primary;
-        color: $_color-primary;
+        color:  color(primary);
         background: none;
         &:hover, &:focus {
           background: $_color-primary;

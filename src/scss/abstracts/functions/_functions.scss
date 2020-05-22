@@ -1,6 +1,17 @@
+
 // Return var(--color)
 // =========================
 @function var-color($name) {
+
+  @if map-has-key($_colors, $name) {
+    @return var(--#{$name});
+  }
+
+  @error "Sorry, the key #{$name} not exist in $_colors";
+  @return null;
+}
+
+@function color($name) {
 
   @if map-has-key($_colors, $name) {
     @return var(--#{$name});

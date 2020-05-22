@@ -1,16 +1,16 @@
 
 // Colors
 // =========================
-$_color-primary :           #e0dd3f !default;
+$_color-primary :           #b30000 !default;
 $_color-secondary :         #eeebdf !default;
-$_color-black :             #323e48 !default;
+$_color-black :             #000000 !default;
 $_color-white :             #FFFFFF !default;
-$_color-success :           #22ce8b !default;
+$_color-success :           #23DB72 !default;
 $_color-info :              #00B0FF !default;
 $_color-warning :           #FF9800 !default;
-$_color-error :             #f46363 !default;
+$_color-error :             #FB4635 !default;
 $_color-light :             rgb(235,235,235) !default;
-$_color-grey :              #969696 !default;
+$_color-grey :              #676767 !default;
 $_color-online :            #00C853 !default;
 $_color-way :               #f1c40f !default;
 $_color-offline :           #e74c3c !default;
@@ -31,12 +31,10 @@ $_colors : (
         grey :      $_color-grey,
 ) !default;
 
-
 // Fonts
 // =========================
-$_ft-primary :              "Karla",sans-serif !default;
-$_ft-secondary :            "Gloria Hallelujah",cursive !default;
-$_ft-icon-material :        'Material Icons' !default;
+$_ft-primary :              "Roboto" ,sans-serif !default;
+$_ft-secondary :            $_ft-primary !default;
 $_ft-base-size :            1em !default;
 
 // (p, a, input, span, label, ...)
@@ -74,4 +72,4 @@ $_titles : (
 
 // Container
 // =========================
-$_body-background-color:          $_color-white !default;
+$_body-background-color:          var(--white) !default;

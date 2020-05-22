@@ -1,16 +1,19 @@
 :root {
 
   // Color vars
+  // =========================
   @each $class, $color in $_colors {
     --#{$class}: #{$color};
   }
 
   // Title vars
+  // =========================
   @each $tag, $size in $_titles {
     --ft-title-#{$tag}: #{$size};
   }
 
   // Fonts
+  // =========================
   --ft-primary: #{$_ft-primary};
   --ft-secondary: #{$_ft-secondary};
   --ft-base-size: #{$_ft-base-size};

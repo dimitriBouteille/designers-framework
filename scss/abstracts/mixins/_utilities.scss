@@ -1,6 +1,0 @@
-
-// Add material icon in content property
-@mixin icon-material($icon) {
-  font-family: $_ft-icon-material;
-  content: $icon;
-}

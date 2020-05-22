@@ -9,10 +9,10 @@
 
     #{$this} {
 
-      border: solid 1px $_color-primary;
+      border: solid 1px var-color(primary);
       padding: 12px 23px;
       @include p(transition, $_default-transition);
-      color: $_color-primary;
+      color: var-color(primary);
       position: relative;
       @include p(display, inline-flex);
       @include p(align-items, center);
@@ -27,7 +27,7 @@
         bottom: 0;
         width: 0;
         transition: inherit;
-        background: $_color-primary;
+        background: var-color(primary);
         z-index: -1;
       }
       &.rounded {
